@@ -1,7 +1,5 @@
-/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
-
 html {
-    color: #222;
+    color: #555;
     font-size: 1em;
     line-height: 1.4;
 }
@@ -44,52 +42,14 @@ textarea {
     resize: vertical;
 }
 
-.browserupgrade {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-
-}
 
 @media print,
        (-o-min-device-pixel-ratio: 5/4),
        (-webkit-min-device-pixel-ratio: 1.25),
        (min-resolution: 120dpi) {
-
 }
 
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-.hidden {
+.hidden, .sr-only {
     display: none !important;
     visibility: hidden;
 }
@@ -133,66 +93,168 @@ textarea {
     *zoom: 1;
 }
 
-/* ==========================================================================
-   Print styles
-   ========================================================================== */
+.brand {
+  top: 0;
+  margin: 0;
+  padding: 5px;
+  background-color: #FCF3F3;
+  border-top: 5px solid #1B447F;
+}
 
-@media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important;
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
+.logo {
+  display: inline-block;
+  width: 100px;
+  height: auto;
+  margin: 6px;
+}
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
+.alpha {
+  display: inline-block;
+}
 
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
+.version {
+  font-size: 1rem;
+  color: #BFB9B4;
+  background-color: #E8E8E8;
+  margin: 2px 6px;
+  -webkit-transform: translateY(2px);
+  -moz-transform: translateY(2px);
+  transform: translateY(2px);
+  padding: 4px 4px 0;
+  border-radius: 2px;
+}
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
+h2 {
+  font-size: 2.8rem;
+  color: #55575B;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 900;
+  letter-spacing: -1px;
+  text-align: center;
+  line-height: 1.1;
+  margin: 4rem auto;
+}
 
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
 
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
+.form {
+  text-align: center;
+  margin: 1rem auto;
+  padding: 30px;
+  background-color: #FCF3F3;
+  border-radius: 2px;
+}
 
-    thead {
-        display: table-header-group;
-    }
+.gistInput {
+  width: 76%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 5px solid #1B447F;
+  margin: 5px 1% 5px 0;
+  padding: 5px;
+  font-size: 1.6rem;
+  font-weight: 400;
+  -webkit-transition: all 100ms ease-in-out;
+  -moz-transition: all 100ms ease-in-out;
+  -ms-transition: all 100ms ease-in-out;
+  -o-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+}
 
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
+.gistInput:focus {
+  border-bottom: 5px solid #E27A2D;
+  -webkit-transition: all 100ms ease-in-out;
+  -moz-transition: all 100ms ease-in-out;
+  -ms-transition: all 100ms ease-in-out;
+  -o-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+}
 
-    img {
-        max-width: 100% !important;
-    }
+.gistButton {
+  background-color: #E27A2D;
+  width: 200px;
+  max-width: 100%;
+  color: #fff;
+  padding: 6px 6px 2px;
+  margin: 5px 0 5px 1%;
+  font-weight: 900;
+  border: none;
+  border-bottom: 5px solid #C1682D;
+  outline: none;
+  border-radius: 2px;
+  font-size: 1.8rem;
+}
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+  .gists {
+    padding: 30px;
+  }
+  .gistButton {
+    width: 20%;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
 
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
+  .gists {
+    width: 720px;
+    margin: 15px auto;
+  }
+}
 
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+.gistTitle {
+display: block;
+font-weight: 900;
+font-size: 1.6rem;
+}
+
+.gistBody {
+  display: block;
+  font-size: 1.4rem;
+}
+
+.gistLink {
+  display: block;
+  /*float: right;*/
+  text-align: right;
+  text-decoration: none;
+  color: #E27A2D;
+  font-size: 1.2rem;
+  background-color: #E8E8E8;
+  padding: 4px 8px 2px;
+  border-radius: 2px;
+  font-weight: 900;
+  -webkit-transition: all 100ms ease-in-out;
+  -moz-transition: all 100ms ease-in-out;
+  -ms-transition: all 100ms ease-in-out;
+  -o-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+}
+
+.gistLink:hover {
+  background-color: #E27A2D;
+  color: #fff;
+  -webkit-transition: all 100ms ease-in-out;
+  -moz-transition: all 100ms ease-in-out;
+  -ms-transition: all 100ms ease-in-out;
+  -o-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+}
+
+.oneGist {
+  margin-bottom: 5rem;
 }

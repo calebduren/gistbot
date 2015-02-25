@@ -1,24 +1,35 @@
-// Avoid `console` errors in browsers that lack a console.
-(function() {
-    var method;
-    var noop = function () {};
-    var methods = [
-        'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
-        'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
-        'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
-        'timeline', 'timelineEnd', 'timeStamp', 'trace', 'warn'
-    ];
-    var length = methods.length;
-    var console = (window.console = window.console || {});
+var gist = {
+  id: function(str) {
+    return document.getElementById(str);
+  }
+};
 
-    while (length--) {
-        method = methods[length];
+setTimeout(function(){
+  gist.id('getGist').focus();
+}, 1000);
 
-        // Only stub undefined methods.
-        if (!console[method]) {
-            console[method] = noop;
-        }
+var tag = '';
+
+gist.id('getGist').onkeyup = function(e) {
+  if (!e.keyCode.toString().match(/^(37|38|39|40|13|16|17|18|224)$/)) {
+    if (tag !== '') {
+      document.body.removeChild(tag);
     }
-}());
 
-// Place any jQuery/helper plugins in here.
+    tag = document.createElement('script');
+    var term = gist.id('getGist').value;
+
+    tag.src = 'http://en.wikipedia.org/w/api.php?action=opensearch&limit=10&format=json&callback=gistComplete&search=' + term;
+
+    document.body.appendChild(tag);
+  }
+};
+
+var gistComplete = function(data) {
+  gist.id('theGist').innerHTML = '';
+  for (var i = 0; i < 6; i++) {
+    if (data[1][i]) {
+      gist.id('theGist').innerHTML += '<div class="oneGist"><p class="gistTitle">' + data[1][i] + '</p><p class="gistBody">' + data[2][i] + '</p><p class="nofloat"><a class="gistLink" href="http://en.wikipedia.org/wiki/' + data[1][i] + '"' + 'target="_blank">Read More at Wikipedia.org</a></p></div>';
+    }
+  }
+};

@@ -21,61 +21,36 @@
 
 <body>
   <div class="brand">
-    <div class="logo">
-      <img src="img/gistbot.png" alt="Gistbot">
+    <div class="logo-container">
+      <img class="logo" src="img/gistbot.png" alt="Gistbot">
+      <div class="alpha"><h6 class="version">ALPHA</h6></div>
     </div>
   </div>
-    <form id="gistInput">
-        <input type="text" name="search" id="getGist">
-        <button type="button" id="gist" onclick="validate()" value="checkvalue">get the gist</button>
+  <div class="container">
+<div class="row">
+  <div class="intro">
+    <h1 class="sr-only">Gistbot</h1>
+    <h2 class="intro-text">Paste a link or type something to get the gist</h2>
+  </div>
+    <form class="form" id="gistInput">
+        <input class="gistInput" type="text" name="search" id="getGist" placeholder="i.e. Mozart or http://www.bbc.com/news/31586610">
+        <button class="gistButton" type="button" id="gist" onclick="validate()" value="checkvalue">get the gist</button>
     </form>
-    <div id="theGist">
+    <div class="gists" id="theGist">
     </div>
-    <script type="text/javascript">
-        var gist = {
-            id: function(str) {
-                return document.getElementById(str);
-            }
-        };
 
-        gist.id('getGist').focus();
-
-        var tag = '';
-
-        gist.id('getGist').onkeyup = function(e) {
-            if (!e.keyCode.toString().match(/^(37|38|39|40|13|16|17|18|224)$/)) {
-                if (tag !== '') {
-                    document.body.removeChild(tag);
-                }
-
-                tag = document.createElement('script');
-                var term = gist.id('getGist').value;
-
-                tag.src = 'http://en.wikipedia.org/w/api.php?action=opensearch&limit=10&format=json&callback=gistComplete&search=' + term;
-
-                document.body.appendChild(tag);
-            }
-        };
-
-        var gistComplete = function(data) {
-            gist.id('theGist').innerHTML = '';
-            for (var i = 0; i < 6; i++) {
-                if (data[1][i]) {
-                    gist.id('theGist').innerHTML += '<p><b>' + data[1][i] + '</b><br />' + data[2][i] + '</p><br /><a href="http://en.wikipedia.org/wiki/' + data[1][i] + '"' + 'target="_blank">Read More</a>';
-                }
-            }
-        };
-    </script>
+    <script type="text/javascript" src="js/plugins.js"></script>
 
 
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script type="text/javascript">
-        window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
-    </script>
+</div>
+</div>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+</script>
 
     <script type="text/javascript" src="js/main.js"></script>
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script type="text/javascript">
         (function(b, o, i, l, e, r) {
             b.GoogleAnalyticsObject = l;
