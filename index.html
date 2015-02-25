@@ -8,6 +8,8 @@
     <meta name="description" content="Get a summary of a topic or article in a jiffy with Gistbot">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16" />
 
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/main.css">
@@ -20,7 +22,7 @@
 </head>
 
 <body>
-  <div class="brand">
+  <div id="brandBar" class="brand">
     <div class="logo-container">
       <img class="logo" src="img/gistbot.png" alt="Gistbot">
       <div class="alpha"><h6 class="version">ALPHA</h6></div>
@@ -30,11 +32,14 @@
 <div class="row">
   <div class="intro">
     <h1 class="sr-only">Gistbot</h1>
-    <h2 class="intro-text">Paste a link or type something to get the gist</h2>
+    <h2 class="intro-text">Paste a link or type something <span class="nw">to get the gist</span></h2>
   </div>
     <form class="form" id="gistInput">
-        <input class="gistInput" type="text" name="search" id="getGist" placeholder="i.e. Mozart or http://www.bbc.com/news/31586610">
+
+        <input class="gistInput" type="text" name="Gistbot" id="getGist" placeholder="i.e. Basset Hound or http://bbc.com/news/31586610">
+
         <button class="gistButton" type="button" id="gist" onclick="validate()" value="checkvalue">get the gist</button>
+
     </form>
     <div class="gists" id="theGist">
     </div>
@@ -45,12 +50,16 @@
 </div>
 </div>
 
+<div class="footer">
+  <div class="text-center">
+    <p class="footer-text">Gistbot © 2015. <a class="footer-link" href="privacy-policy.html">Privacy Policy.</a> <a id="email" class="footer-link" href="javascript:void(0)" onclick="revealEmail()">Contact or Leave a Suggestion.</a></p>
+  </div>
+</div>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script type="text/javascript">
-window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
-</script>
+<script type="text/javascript">window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
-    <script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
     <script type="text/javascript">
         (function(b, o, i, l, e, r) {
             b.GoogleAnalyticsObject = l;
@@ -67,6 +76,7 @@ window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\
         ga('create', 'UA-XXXXX-X', 'auto');
         ga('send', 'pageview');
     </script>
+
 </body>
 
 </html>
