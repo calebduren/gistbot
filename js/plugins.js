@@ -28,7 +28,7 @@ gist.id('getGist').onkeyup = function(e) {
 
 var gistComplete = function(data) {
   gist.id('theGist').innerHTML = '';
-  for (var i = 0; i < 6; i++) {
+  for (var i = 0; i < 12; i++) {
     if (data[1][i]) {
       gist.id('theGist').innerHTML += '<div class="oneGist"><p class="gistTitle">' + data[1][i] + '</p><p class="gistBody">' + data[2][i] + '</p><p class="nofloat"><a class="gistLink" href="http://en.wikipedia.org/wiki/' + data[1][i] + '"' + 'target="_blank">Read More at Wikipedia.org</a></p></div>';
     }

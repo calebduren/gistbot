@@ -9,10 +9,6 @@ a {
 }
 body {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
-  background-image: url("../img/bot.svg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: right bottom;
   padding: 32px 0 64px;
 }
 
@@ -153,15 +149,16 @@ textarea {
 }
 
 h2 {
-  font-size: 2.8rem;
+  font-size: 2rem;
   color: #55575B;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 900;
   letter-spacing: -1px;
   letter-spacing: -1.5px;
   text-align: center;
-  line-height: 1.1;
-  margin: 4rem auto;}
+  line-height: 1;
+  margin: 1rem auto .75rem;
+}
 
 h5 {
   font-size: 1.4rem;
@@ -175,21 +172,25 @@ margin-bottom: 1rem;
 }
 .form {
   text-align: center;
-  margin: 30px auto 40px;
-  padding: 30px;
+  margin: 20px auto 40px;
+  padding: 15px;
   background-color: #FCF3F3;
   border-radius: 2px;
 }
 
 .gistInput {
+  min-width: 100px;
+  padding: 0;
   width: 100%;
+  max-width: 100%;
   background-color: transparent;
   border: none;
   vertical-align: bottom;
+  border-radius: 0;
   border-bottom: 5px solid #E27A2D;
   margin: 5px auto 30px;
   letter-spacing: -.5px;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 500;
   -webkit-transition: all 250ms ease-in-out;
   -moz-transition: all 250ms ease-in-out;
@@ -200,6 +201,7 @@ margin-bottom: 1rem;
 
 .gistInput:focus {
   outline: none;
+  border-radius: 0;
   border-bottom: 5px solid #1B447F;
   -webkit-transition: all 250ms ease-in-out;
   -moz-transition: all 250ms ease-in-out;
@@ -246,41 +248,10 @@ margin-bottom: 1rem;
   margin-left: -30px;
   margin-right: -30px;
 }
-@media (min-width: 420px) {
-  .nw {
-    white-space: nowrap;
-    }
+.xs {
+display: block;
 }
-@media (min-width: 768px) {
-  .gistButton {
-    width: 25%;
-    margin: 5px 0 5px 1%;
-  }
-  .gistInput {
-  width: 70%;
-  margin: 5px 1% 5px 0;
-  }
 
-  }
-@media (min-width: 992px) {
-  .container {
-    width: 900px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  .row {
-    margin-left: -15px;
-    margin-right: -15px;
-  }
-  .gists {
-    margin: 30px auto;
-  }
-}
-@media (min-width: 1350px) {
-  .brand {
-    background-color: transparent;
-  }
-}
 
 .gistTitle {
   margin-top: 0;
@@ -329,11 +300,10 @@ margin-bottom: 1rem;
 
 .oneGist {
   margin: 40px auto;
-  padding: 40px 45px;
+  padding: 15px 20px;
   border: 5px solid #FCF3F3;
   border-radius: 2px;
   background-color: #FFFFFF;
-  /*background-color: rgba(255,255,255,.75);*/
 }
 
 .nofloat {
@@ -351,10 +321,13 @@ margin-bottom: 1rem;
 
 .footer-text {
   font-weight: 900;
-  padding: 2px 15px 0;
+  padding: 2px 5px 0;
   color: #FCF3F3;
   text-align: center;
   font-size: .85rem;
+  margin-top: .25rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.6;
 }
 
 .footer-link {
@@ -363,6 +336,7 @@ margin-bottom: 1rem;
   padding: 0 1px;
   text-shadow: 0 1px 0 #1B447F,
     1px 1px 0 #1B447F,
+    0 2px 0 #1B447F,
     -1px 1px 0 #1B447F,
     1px 0 0 #1B447F,
     -1px 1px 0 #1B447F,
@@ -383,13 +357,73 @@ margin-bottom: 1rem;
 .footer-link:hover {
   color: #1B447F;
   text-shadow: none;
-  -webkit-box-shadow: inset 0 -1.1rem 0 0 #FCF3F3;
-  -moz-box-shadow: inset 0 -1.1rem 0 #FCF3F3;
-  box-shadow: inset 0 -1.1rem 0 0 #FCF3F3;
+  -webkit-box-shadow: inset 0 -1.2rem 0 0 #FCF3F3;
+  -moz-box-shadow: inset 0 -1.2rem 0 #FCF3F3;
+  box-shadow: inset 0 -1.2rem 0 0 #FCF3F3;
   border-radius: 2px;
   -webkit-transition: all 75ms ease-in-out;
   -moz-transition: all 75ms ease-in-out;
   -ms-transition: all 75ms ease-in-out;
   -o-transition: all 75ms ease-in-out;
   transition: all 75ms ease-in-out;
+}
+@media (min-width: 420px) {
+  .xs {
+  display: none;
+  }
+  .nw {
+    white-space: nowrap;
+    }
+    body {
+      background-image: url("../img/bot.svg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: right bottom;
+    }
+}
+@media (min-width: 768px) {
+  .gistButton {
+    width: 25%;
+    margin: 5px 0 5px 1%;
+  }
+  .gistInput {
+  font-size: 1.8rem;
+  width: 70%;
+  margin: 5px 1% 5px 0;
+  }
+  h2 {
+    font-size: 2.8rem;
+    margin: 4rem auto;
+    line-height: 1.1;
+  }
+  .footer-text {
+    margin-top: .57rem;
+    margin-bottom: .75rem;
+  }
+  .form {
+    margin: 30px auto 40px;
+    padding: 30px;
+  }
+  .oneGist {
+padding: 40px 45px;
+}
+}
+@media (min-width: 992px) {
+  .container {
+    width: 900px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .row {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .gists {
+    margin: 30px auto;
+  }
+}
+@media (min-width: 1350px) {
+  .brand {
+    background-color: transparent;
+  }
 }
