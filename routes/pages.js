@@ -1,7 +1,7 @@
 module.exports = function (app) {
   var home = function (req, res) {
     res.render('index', {
-      title: "Title here"
+      env: process.env.ENV
     });
   };
 

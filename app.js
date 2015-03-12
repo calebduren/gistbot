@@ -5,11 +5,14 @@ var path = require('path');
 
 var app = express();
 
-app.set('port', 3000);
+if (process.env.ENV === "prod") {
+  app.set('port', 80);
+} else {
+  app.set('port', 3000);
 
-//Only use this for non-production apps
-var lessMiddleware = require('less-middleware');
-app.use(lessMiddleware(path.join(__dirname, 'public')));
+  var lessMiddleware = require('less-middleware');
+  app.use(lessMiddleware(path.join(__dirname, 'public')));
+}
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
