@@ -1,0 +1,47 @@
+doctype html
+html.no-js(lang='')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        title Gistbot
+        meta(name='description', content='Get a summary of a topic or article in a jiffy with Gistbot')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='apple-touch-icon', href='apple-touch-icon.png')
+        link(rel='icon', type='image/png', href='img/favicon-32x32.png', sizes='32x32')
+        link(rel='icon', type='image/png', href='img/favicon-16x16.png', sizes='16x16')
+        link(rel='stylesheet', href='css/normalize.css')
+        link(rel='stylesheet', href='css/main.css')
+        script(type='text/javascript', src='js/vendor/jquery-2.1.3.min.js')
+        //if lt IE 9
+          script(src='//html5shiv.googlecode.com/svn/trunk/html5.js')
+          script.
+            window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\\/script>')
+    body
+        #brandBar.brand
+            .logo-container
+                img.logo(src='img/gistbot.png', alt='Gistbot')
+                .alpha
+                    h6.version ALPHA
+        .container
+            .row
+                .intro
+                    h1.sr-only Gistbot
+                    h2.intro-text
+                        | Paste a link or type something
+                        span.nw to get the gist
+                form#gistInput.form
+                    input#getGist.gistInput(type='text', name='Gistbot', placeholder='i.e. Basset Hound or http://bbc.com/news/31586610')
+                    button#gist.gistButton(type='button', onclick='validate()', value='checkvalue')
+                        | get the gist
+                #theGist.gists
+        .footer
+            .text-center
+                p.footer-text
+                    | Gistbot © 2015.
+                    a.footer-link(href='../../privacy-policy.html')
+                        | Privacy
+                        | Policy.
+                    br.xs
+                    a#email.footer-link(href='javascript:void(0)', onclick='revealEmail()') Contact or Leave a Suggestion.
+        script(type='text/javascript', src='js/plugins.js')
+        script(type='text/javascript', src='js/main.js')
