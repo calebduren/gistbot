@@ -1,5 +1,5 @@
-module.exports = function(app){
-  var home = function(req, res){
+module.exports = function (app) {
+  var home = function (req, res) {
     res.render('index', {
       title: "Title here"
     });

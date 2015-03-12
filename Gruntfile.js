@@ -3,7 +3,7 @@ var expressReloadWatchFiles = [
   'routes/**/*.js'
 ];
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   grunt.initConfig({
 
     express: {
@@ -17,8 +17,7 @@ module.exports = function(grunt) {
     },
 
     jshint: {
-      options: {
-      },
+      options: {},
       grunt: [
         'Gruntfile.js'
       ],
@@ -45,7 +44,7 @@ module.exports = function(grunt) {
         }
       },
       js: {
-        files: ['public/javascripts/**/*.js'],
+        files: ['public/js/**/*.js'],
         tasks: ['jshint:client'],
         options: {
           livereload: true,
@@ -53,7 +52,7 @@ module.exports = function(grunt) {
         }
       },
       configFiles: {
-        files: [ 'Gruntfile.js', 'config/*.js' ],
+        files: ['Gruntfile.js'],
         tasks: ['jshint:grunt'],
         options: {
           reload: true
