@@ -13,6 +13,10 @@
     "request": "^2.44.0",
     "underscore": "^1.7.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://calebduren@bitbucket.org/calebduren/gistbot.git"
+  },
   "devDependencies": {
     "grunt": "^0.4.4",
     "grunt-contrib-watch": "^0.6.1",
