@@ -5,9 +5,9 @@ var path = require('path');
 
 var app = express();
 
-if (process.env.ENV === "prod") {
-  app.set('port', 80);
-} else {
+app.set('port', (process.env.PORT || 5000));
+
+if (!process.env.PORT) {
   app.set('port', 3000);
 
   var lessMiddleware = require('less-middleware');
