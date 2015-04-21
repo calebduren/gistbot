@@ -1,7 +1,7 @@
 function revealEmail() {
   $("#email").html('hi@gistbot.com');
   setTimeout(function () {
-    $("#email").attr('href', 'mailto:hi@gistbot.com');
+    $("#email").attr('href', 'mailto:&#104;&#105;&#64;&#103;&#105;&#115;&#116;&#98;&#111;&#116;&#46;&#99;&#111;&#109;');
   }, 50);
 }
 
