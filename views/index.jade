@@ -19,18 +19,20 @@ html.no-js(lang='')
       script.
         window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\\/script>')
   body
+    .brand-border
     #brandBar.brand
       .logo-container
-        img.logo(src='img/gistbot.png', alt='Gistbot')
+        h1.logo Gistbot
         .alpha
           h6.version PRE-ALPHA
+    .header
+      .intro
+        h1.sr-only Gistbot
+        h2.intro-text
+          | Paste a link or type something&nbsp;
+          span.nw to get the gist
     .container
       .row
-        .intro
-          h1.sr-only Gistbot
-          h2.intro-text
-            | Paste a link or type something&nbsp;
-            span.nw to get the gist
         form#gistInput.form
           input#getGist.gistInput(type='text', name='Gistbot', placeholder='i.e. Nikola Tesla or http://bbc.com/news/31586610')
           button#gist.gistButton(type='button', onclick='validate()', value='checkvalue')

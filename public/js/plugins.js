@@ -6,7 +6,7 @@ var gist = {
 
 setTimeout(function () {
   gist.id('getGist').focus();
-}, 250);
+}, 750);
 
 var tag = '';
 
