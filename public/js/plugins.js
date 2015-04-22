@@ -76,7 +76,7 @@ var gistUrlComplete = function (data) {
 
 var gistComplete = function (data) {
   gist.id('theGist').innerHTML = '';
-  for (var i = 0; i < 12; i++) {
+  for (var i = 0; i < 15; i++) {
     if (data[1][i]) {
       gist.id('theGist').innerHTML += '<div class="oneGist">' +
         '<p class="gistTitle">' + data[1][i] + '</p>' +

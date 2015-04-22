@@ -13,7 +13,7 @@ $(window).scroll(function(){
   var scrollDist = $(window).scrollTop(),
       brandBar = $('#brandBar').height(),
       lightHeight = $('#header').height() - brandBar - 20,
-      darkHeight = $('#header').height() + brandBar,
+      darkHeight = $('#header').height() + brandBar - 20,
       logoLight = $('#logo-light'),
       logoDark = $('#logo-dark');
 
