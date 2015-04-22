@@ -14,6 +14,10 @@ body {
   padding: 0 0 36px;
 }
 
+p {
+  margin: 0 auto 1em;
+}
+
 .header {
     background: #52dde8 url("/img/gistbot-bg-palm.png") no-repeat center bottom;
     -webkit-background-size: cover;
@@ -152,7 +156,7 @@ textarea {
   display: inline;
 }
 
-.logo-light {
+.logo {
   margin: 0 2px 0 4px;
   color: #FFF;
   font-size: 18px;
@@ -161,20 +165,52 @@ textarea {
   vertical-align: top;
   font-weight: 500;
   text-rendering: optimizeLegibility;
-  transition: all 250ms;
+  transform: translate(0, 0);
+  transition: all 250ms ease-in;
+}
+
+.logo-light {
+  margin: 0 2px 0 4px;
+  color: #FFF;
+  font-size: 18px;
+  line-height: 1.5;
+  position: absolute;
+  width: 172px;
+  top: 5px;
+  letter-spacing: 0.01em;
+  vertical-align: top;
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
+  transform: translate(0, 0);
+  transition: all 250ms ease-in;
+
 }
 
 .logo-dark {
   margin: 0 2px 0 4px;
   color: #f07864;
   font-size: 18px;
-  display: none;
+  position: absolute;
+  width: 172px;
+  top: 5px;
   line-height: 1.5;
   letter-spacing: 0.01em;
   vertical-align: top;
   font-weight: 500;
   text-rendering: optimizeLegibility;
-  transition: all 250ms;
+  transform: translate(0, 0);
+  transition: all 250ms ease-in;
+
+}
+
+.top {
+  transform: translateY(-300px);
+  transition: all 250ms ease-in;
+}
+
+.left {
+  transform: translateX(-300px);
+  transition: all 250ms ease-in;
 }
 
 .alpha {
@@ -215,10 +251,10 @@ h2 {
 
 h5 {
   font-size: 1.4em;
-  color: #55575B;
+  color: #555555;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
-  font-weight: 900;
-  letter-spacing: -.5px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
   line-height: 1.1;
 }
 
@@ -457,6 +493,19 @@ h5 {
   text-decoration: none;
 }
 
+.privacy {
+  background-color: #F6F6F6;
+  margin: -46px auto 40px;
+  padding: 20px;
+  border-radius: 2px;
+  box-shadow: 0 -4px 6px -2px rgba(20,20,60,0.1);
+  background: -moz-linear-gradient(top, rgba(246,246,246,0.9) 0, #FFFFFF 30%, #FFFFFF 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(246,246,246,0.6)), color-stop(30%, #FFFFFF), color-stop(100%, #FFFFFF));
+  background: -webkit-linear-gradient(top, rgba(246,246,246,0.9) 0, #FFFFFF 30%, #FFFFFF 100%);
+  background: -o-linear-gradient(top, rgba(246,246,246,0.9) 0, #FFFFFF 30%, #FFFFFF 100%);
+  background: -ms-linear-gradient(top, rgba(246,246,246,0.9) 0, #FFFFFF 30%, #FFFFFF 100%);
+  background: linear-gradient(to bottom, rgba(246,246,246,0.9) 0, #FFFFFF 30%, #FFFFFF 100%);
+}
 
 @media (min-width: 448px) {
   .xs {
@@ -530,6 +579,10 @@ h5 {
 
   .oneGist {
     padding: 35px 40px;
+  }
+  .privacy {
+    margin: -76px auto 40px;
+    padding: 26px 36px;
   }
 }
 
