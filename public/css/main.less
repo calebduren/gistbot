@@ -19,7 +19,7 @@ p {
 }
 
 .header {
-    background: #52dde8 url("/img/gistbot-bg-palm.png") no-repeat center bottom;
+    background: #52dde8 url("/img/gistbot-bg-palm-2.png") no-repeat center bottom;
     -webkit-background-size: cover;
      -moz-background-size: cover;
        -o-background-size: cover;
@@ -44,24 +44,24 @@ p {
 
 ::-webkit-input-placeholder {
   color: #CECACA;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 :-moz-placeholder {
   /* Firefox 18- */
   color: #CECACA;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 ::-moz-placeholder {
   /* Firefox 19+ */
   color: #CECACA;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 :-ms-input-placeholder {
   color: #CECACA;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 audio,
@@ -135,13 +135,13 @@ textarea {
 
 .brand {
   top: 0;
-  margin: 8px 4px;
-  padding: 3px 1px 6px;
+  margin: 4px 2px;
+  padding: 0;
   position: absolute;
   background-color: transparent;
 }
 .brand-border {
-  border-top: 6px solid #f07864;
+  border-top: 6px solid #F07864;
   width: 100%;
   position: fixed;
   top: 0;
@@ -165,8 +165,10 @@ textarea {
   vertical-align: top;
   font-weight: 500;
   text-rendering: optimizeLegibility;
+  -ms-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
-  transition: all 250ms ease-in;
+  transition: all 250ms ease-in-out;
 }
 
 .logo-light {
@@ -181,14 +183,16 @@ textarea {
   vertical-align: top;
   font-weight: 500;
   text-rendering: optimizeLegibility;
+  -ms-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
-  transition: all 250ms ease-in;
+  transition: all 250ms ease-in-out;
 
 }
 
 .logo-dark {
   margin: 0 2px 0 4px;
-  color: #f07864;
+  color: #F07864;
   font-size: 18px;
   position: absolute;
   width: 172px;
@@ -198,19 +202,25 @@ textarea {
   vertical-align: top;
   font-weight: 500;
   text-rendering: optimizeLegibility;
+  -ms-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
-  transition: all 250ms ease-in;
+  transition: all 250ms ease-in-out;
 
 }
 
 .top {
+  -ms-transform: translateY(-300px);
+  -webkit-transform: translateY(-300px);
   transform: translateY(-300px);
-  transition: all 250ms ease-in;
+  transition: all 250ms ease-in-out;
 }
 
 .left {
+  -ms-transform: translateX(-300px);
+  -webkit-transform: translateX(-300px);
   transform: translateX(-300px);
-  transition: all 250ms ease-in;
+  transition: all 250ms ease-in-out;
 }
 
 .alpha {
@@ -218,34 +228,60 @@ textarea {
 }
 
 .version {
-  font-size: .8em;
+  font-size: .75em;
+  line-height: 1.2;
   margin: 0 8px;
-  padding: 2px 4px 0 3px;
+  padding: 0 2px;
   border-radius: 2px;
+  -ms-transform: translateY(-2px);
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 .version-dark-bg {
-  color: #f07864;
+  color: #F07864;
   background-color: #FFFFFF;
+  border: 2px solid #FFFFFF;
 }
 
 .version-light-bg {
-  color: #FFFFFF;
-  background-color: #f07864;
+  color: #F07864;
+  background-color: transparent;
+  border: 2px solid #F07864;
 }
 
 h2 {
-  font-size: 2.2em;
+  font-size: 2.4em;
   color: #FFFFFF;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
-  font-weight: 200;
+  font-weight: 300;
   text-align: center;
   letter-spacing: -0.01em;
   line-height: 1;
 }
 
 .intro-text {
-  padding: 30px 5px 10px;
+  margin: .2em;
+}
+
+.intro-text, .welcome {
+  text-shadow: 0 0 6px rgba(20,20,60,0.1);
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+h3 {
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  margin: 0 auto;
+  font-weight: 300;
+  color: #FFFFFF;
+  font-size: 1.4em;
+  text-shadow: 0 0 6px rgba(20,20,60,0.1);
+}
+
+.header {
+  padding: 30px 0 10px;
   transition: padding 200ms ease-out;
 }
 
@@ -275,71 +311,85 @@ h5 {
 .gistInput {
   min-width: 100px;
   padding: 0;
-  width: 100%;
+  width: ~"calc(100% - 24px)";
   max-width: 100%;
-  background-color: transparent;
-  border: none;
   vertical-align: bottom;
-  border-radius: 0;
+  border-radius: 2px;
   color: #CECACA;
-  border-bottom: 4px solid #CECACA;
+  box-shadow: inset 0 -4px 0 #F07864;
+  padding: 10px;
+  border: 1px solid #CECACA;
+  background: -moz-linear-gradient(top, rgba(236,236,236,1) 0%, rgba(246,246,246,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.6)), color-stop(100%,rgba(246,246,246,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(236,236,236,1) 0%,rgba(246,246,246,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(236,236,236,1) 0%,rgba(246,246,246,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(236,236,236,1) 0%,rgba(246,246,246,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(236,236,236,1) 0%,rgba(246,246,246,1) 100%); /* W3C */
   margin: 5px auto 20px;
   letter-spacing: -.01em;
   font-size: 1.2em;
   font-weight: 500;
-  -webkit-transition: all 250ms ease-in-out;
-  -moz-transition: all 250ms ease-in-out;
-  -ms-transition: all 250ms ease-in-out;
-  -o-transition: all 250ms ease-in-out;
-  transition: all 250ms ease-in-out;
+  -webkit-transition: background 100ms, box-shadow 500ms;
+  -moz-transition: background 100ms, box-shadow 500ms;
+  -ms-transition: background 100ms, box-shadow 500ms;
+  -o-transition: background 100ms, box-shadow 500ms;
+  transition: background 100ms, box-shadow 500ms;
 }
 
 .gistInput:focus {
+  background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(246,246,246,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.6)), color-stop(100%,rgba(246,246,246,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 100%); /* W3C */
   outline: none;
-  border-radius: 0;
   color: #555555;
-  border-bottom: 4px solid #f07864;
-  -webkit-transition: all 100ms ease-in-out;
-  -moz-transition: all 100ms ease-in-out;
-  -ms-transition: all 100ms ease-in-out;
-  -o-transition: all 100ms ease-in-out;
-  transition: all 100ms ease-in-out;
+  box-shadow: inset 0px 1px 6px rgba(20,20,60,0.05);
+  -webkit-transition: background 250ms, box-shadow 100ms;
+  -moz-transition: background 250ms, box-shadow 100ms;
+  -ms-transition: background 250ms, box-shadow 100ms;
+  -o-transition: background 250ms, box-shadow 100ms;
+  transition: background 250ms, box-shadow 100ms;
+
 }
 
 .gistButton {
-  background: #f07864; /* Old browsers */
-  background: -moz-linear-gradient(top,  #f07864 0%, #e26a56 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f07864), color-stop(100%,#e26a56)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #f07864 0%,#e26a56 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #f07864 0%,#e26a56 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #f07864 0%,#e26a56 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #f07864 0%,#e26a56 100%); /* W3C */
+  background: #F07864; /* Old browsers */
+  background: -moz-linear-gradient(top,  #F07864 0%, #e26a56 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F07864), color-stop(100%,#e26a56)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #F07864 0%,#e26a56 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #F07864 0%,#e26a56 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #F07864 0%,#e26a56 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #F07864 0%,#e26a56 100%); /* W3C */
   width: 100%;
   max-width: 100%;
   color: #FFFFFF;
-  padding: 6px 12px 10px;
+  padding: 4px 12px 10px;
   margin: 5px auto 5px;
   font-weight: 500;
-  border: none;
+  border: 1px solid #F07864;
   border-radius: 2px;
   font-size: 1.4em;
+  line-height: 1.45;
   box-shadow: 0 0 1px 1px rgba(20,20,60,0.1);
-  -webkit-transition: all 75ms;
-  -moz-transition: all 75ms;
-  -ms-transition: all 75ms;
-  -o-transition: all 75ms;
-  transition: all 75ms;
+  -webkit-transition: background 75ms, box-shadow 250ms;
+  -moz-transition: background 75ms, box-shadow 250ms;
+  -ms-transition: background 75ms, box-shadow 250ms;
+  -o-transition: background 75ms, box-shadow 250ms;
+  transition: background 75ms, box-shadow 250ms;
 }
 
 .gistButton:hover {
   background: #e26a56; /* Old browsers */
-  background: -moz-radial-gradient(center, ellipse cover,  #e26a56 0%, #f07864 100%); /* FF3.6+ */
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#e26a56), color-stop(100%,#f07864)); /* Chrome,Safari4+ */
-  background: -webkit-radial-gradient(center, ellipse cover,  #e26a56 0%,#f07864 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-radial-gradient(center, ellipse cover,  #e26a56 0%,#f07864 100%); /* Opera 12+ */
-  background: -ms-radial-gradient(center, ellipse cover,  #e26a56 0%,#f07864 100%); /* IE10+ */
-  background: radial-gradient(ellipse at center,  #e26a56 0%,#f07864 100%); /* W3C */
+  background: -moz-radial-gradient(center, ellipse cover,  #e26a56 0%, #F07864 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#e26a56), color-stop(100%,#F07864)); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center,  #e26a56 0%,#F07864 100%); /* W3C */
   box-shadow: 0px 1px 8px 1px rgba(20,20,60,0.2);
+  border: 1px solid #e26a56;
   -webkit-transition: all 75ms ease-out;
   -moz-transition: all 75ms ease-out;
   -ms-transition: all 75ms ease-out;
@@ -350,12 +400,13 @@ h5 {
 .gistButton:focus, .gistButton:active {
   color: #F6F6F6;
   background: #e26a56; /* Old browsers */
-  background: -moz-radial-gradient(center, ellipse cover,  #e26a56 0%, #f07864 100%); /* FF3.6+ */
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#e26a56), color-stop(100%,#f07864)); /* Chrome,Safari4+ */
-  background: -webkit-radial-gradient(center, ellipse cover,  #e26a56 0%,#f07864 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-radial-gradient(center, ellipse cover,  #e26a56 0%,#f07864 100%); /* Opera 12+ */
-  background: -ms-radial-gradient(center, ellipse cover,  #e26a56 0%,#f07864 100%); /* IE10+ */
-  background: radial-gradient(ellipse at center,  #e26a56 0%,#f07864 100%); /* W3C */
+  border: 1px solid #e26a56;
+  background: -moz-radial-gradient(center, ellipse cover,  #e26a56 0%, #F07864 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#e26a56), color-stop(100%,#F07864)); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center,  #e26a56 0%,#F07864 100%); /* W3C */
   box-shadow: inset 0px 1px 8px rgba(20,20,60,0.2);
 }
 
@@ -401,13 +452,13 @@ h5 {
   color: #FFFFFF;
   width: 13em;
   font-size: 1em;
-  background: #f07864; /* Old browsers */
-  background: -moz-linear-gradient(top,  #f07864 0%, #e26a56 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f07864), color-stop(100%,#e26a56)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #f07864 0%,#e26a56 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #f07864 0%,#e26a56 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #f07864 0%,#e26a56 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #f07864 0%,#e26a56 100%); /* W3C */
+  background: #F07864; /* Old browsers */
+  background: -moz-linear-gradient(top,  #F07864 0%, #e26a56 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F07864), color-stop(100%,#e26a56)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #F07864 0%,#e26a56 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #F07864 0%,#e26a56 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #F07864 0%,#e26a56 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #F07864 0%,#e26a56 100%); /* W3C */
   box-shadow: 0 0 1px 1px rgba(20,20,60,0.1);
   padding: 4px 8px 6px;
   border-radius: 2px;
@@ -420,12 +471,12 @@ h5 {
 }
 
 .gistLink:hover {
-  background: -moz-radial-gradient(center, ellipse cover,  #e26a56 0%, #f07864 100%); /* FF3.6+ */
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#e26a56), color-stop(100%,#f07864)); /* Chrome,Safari4+ */
-  background: -webkit-radial-gradient(center, ellipse cover,  #e26a56 0%,#f07864 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-radial-gradient(center, ellipse cover,  #e26a56 0%,#f07864 100%); /* Opera 12+ */
-  background: -ms-radial-gradient(center, ellipse cover,  #e26a56 0%,#f07864 100%); /* IE10+ */
-  background: radial-gradient(ellipse at center,  #e26a56 0%,#f07864 100%); /* W3C */
+  background: -moz-radial-gradient(center, ellipse cover,  #e26a56 0%, #F07864 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#e26a56), color-stop(100%,#F07864)); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center,  #e26a56 0%,#F07864 100%); /* W3C */
   box-shadow: 0px 1px 6px 1px rgba(20,20,60,0.1);
   color: #FFFFFF;
   -webkit-transition: all 75ms ease-in-out;
@@ -437,12 +488,12 @@ h5 {
 
 .gistLink:active, .gistLink:focus {
   color: #F6F6F6;
-  background: -moz-radial-gradient(center, ellipse cover,  #e26a56 0%, #f07864 100%); /* FF3.6+ */
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#e26a56), color-stop(100%,#f07864)); /* Chrome,Safari4+ */
-  background: -webkit-radial-gradient(center, ellipse cover,  #e26a56 0%,#f07864 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-radial-gradient(center, ellipse cover,  #e26a56 0%,#f07864 100%); /* Opera 12+ */
-  background: -ms-radial-gradient(center, ellipse cover,  #e26a56 0%,#f07864 100%); /* IE10+ */
-  background: radial-gradient(ellipse at center,  #e26a56 0%,#f07864 100%); /* W3C */
+  background: -moz-radial-gradient(center, ellipse cover,  #e26a56 0%, #F07864 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#e26a56), color-stop(100%,#F07864)); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center,  #e26a56 0%,#F07864 100%); /* W3C */
   box-shadow: inset 0px 1px 6px rgba(20,20,60,0.1);
 }
 
@@ -488,7 +539,7 @@ h5 {
 }
 
 .footer-link:hover {
-  color: #f07864;
+  color: #F07864;
   text-shadow: none;
   text-decoration: none;
 }
@@ -518,7 +569,7 @@ h5 {
 }
 @media (min-width: 554px) {
   .gistButton {
-    width: ~"calc(28% - 5px)";
+    width: ~"calc(28% - 6px)";
     margin: 5px 0 5px 5px;
     font-size: 1.1em;
   }
@@ -526,8 +577,9 @@ h5 {
   .gistInput {
     font-size: 1.4em;
     font-weight: 400;
-    width: ~"calc(72% - 5px)";
-    margin: 5px 5px 5px 0;
+    width: ~"calc(72% - 32px)";
+    padding: 2px 10px;
+    margin: 5px 10px 5px 0;
     line-height: 1.6;
 
   }
@@ -543,25 +595,25 @@ h5 {
     background: -ms-linear-gradient(top,  rgba(246,246,246,0.6) 0%,rgba(246,246,246,1) 45%,rgba(246,246,246,1) 100%); /* IE10+ */
     background: linear-gradient(to bottom,  rgba(246,246,246,0.6) 0%,rgba(246,246,246,1) 45%,rgba(246,246,246,1) 100%); /* W3C */
   }
-  .intro-text {
-    padding: 30px 5px 50px;
+  .header {
+    padding: 46px 0 60px;
   }
 }
 
 @media (min-width: 768px) {
   .gistButton {
-    width: ~"calc(24% - 15px)";
+    width: ~"calc(25% - 14px)";
     margin: 5px 0 5px 15px;
     font-size: 1.4em;
   }
 
   .gistInput {
     font-size: 1.6em;
-    width: ~"calc(76% - 15px)";
+    width: ~"calc(75% - 38px)";
     margin: 5px 15px 5px 0;
   }
   h2 {
-    font-size: 2.4em;
+    font-size: 2.8em;
     line-height: 1.1;
   }
 
@@ -571,9 +623,8 @@ h5 {
     box-shadow: 0px -4px 6px -2px rgba(20,20,60,0.1);
   }
 
-  .intro-text {
-    padding: 22px 24px 92px;
-    text-shadow: 0 0 6px rgba(20,20,60,0.1);
+  .header {
+    padding: 72px 0 132px;
     transition: padding 200ms ease-out;
   }
 
@@ -586,22 +637,22 @@ h5 {
   }
 }
 
-@media (min-width: 992px) and (min-height: 992px) {
-  .intro-text {
-    padding: 92px 24px 156px;
+@media (min-width: 992px) and (min-height: 840px) {
+  .header {
+    padding: 92px 0 156px;
     transition: padding 200ms ease-out;
   }
 }
 
 @media (min-width: 992px) {
   .gistButton {
-    width: ~"calc(20% - 15px)";
+    width: ~"calc(20% - 16px)";
     margin: 5px 0 5px 15px;
   }
 
   .gistInput {
     font-size: 1.6em;
-    width: ~"calc(80% - 15px)";
+    width: ~"calc(80% - 36px)";
     margin: 5px 15px 5px 0;
   }
   .container {
@@ -623,7 +674,7 @@ h5 {
 @media (min-width: 1300px) {
   .brand {
     top: 0;
-    margin: 8px 4px;
+    margin: 4px 2px;
     position: fixed;
     background-color: transparent;
   }
