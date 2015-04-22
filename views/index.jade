@@ -11,7 +11,7 @@ html.no-js(lang='')
     link(rel='icon', type='image/png', href='img/favicon-16x16.png', sizes='16x16')
     link(rel='stylesheet', href='css/normalize.css')
     link(rel='stylesheet', href='css/main.css')
-    if(locals.env !== "prod")
+    if(locals.livereload)
       script(src='//localhost:35729/livereload.js')
     script(type='text/javascript', src='js/vendor/jquery-2.1.3.min.js')
     //if lt IE 9
@@ -35,7 +35,7 @@ html.no-js(lang='')
       .row
         form#gistInput.form
           input#getGist.gistInput(type='text', name='Gistbot', placeholder='i.e. Nikola Tesla or http://bbc.com/news/31586610')
-          button#gist.gistButton(type='button', onclick='validate()', value='checkvalue')
+          button#gist.gistButton(type='button', value='checkvalue')
             | get the gist
         #theGist.gists
     .footer
