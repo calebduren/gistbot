@@ -8,3 +8,25 @@ function revealEmail() {
 if ($(window).width() < 768) {
   $("#getGist").attr('placeholder', 'i.e. Nitrogen or goo.gl/zWz1jU');
 }
+
+$(window).scroll(function(){
+  var scrollDist = $(window).scrollTop(),
+      brandBar = $('#brandBar').height(),
+      lightHeight = $('#header').height() - brandBar - 20,
+      darkHeight = $('#header').height() + brandBar,
+      logoLight = $('#logo-light'),
+      logoDark = $('#logo-dark');
+
+  if ( scrollDist > lightHeight ) {
+    logoLight.stop().css({'display': 'none'});
+  } else {
+    logoLight.stop().css({'display': 'inline-block'});
+  }
+
+  if ( scrollDist > darkHeight ) {
+    logoDark.stop().css({'display': 'inline-block'});
+  } else {
+    logoDark.stop().css({'display': 'none'});
+  }
+
+});

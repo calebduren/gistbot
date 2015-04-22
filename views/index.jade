@@ -21,16 +21,18 @@ html.no-js(lang='')
   body
     .brand-border
     #brandBar.brand
-      .logo-container
-        h1.logo Gistbot
-        .alpha
-          h6.version PRE-ALPHA
-    .header
-      .intro
-        h1.sr-only Gistbot
-        h2.intro-text
-          | Paste a link or type something&nbsp;
-          span.nw to get the gist
+      .brand-container
+        .logo-container
+          h1#logo-light.logo-light Gistbot
+            .alpha
+              h6.version.version-dark-bg PRE-ALPHA
+          h1#logo-dark.logo-dark Gistbot
+            .alpha
+              h6.version.version-light-bg PRE-ALPHA
+    #header.header
+      h2.intro-text
+        | Paste a link or type something&nbsp;
+        span.nw to get the gist
     .container
       .row
         form#gistInput.form
