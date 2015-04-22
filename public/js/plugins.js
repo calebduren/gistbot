@@ -60,6 +60,7 @@ $("#gist.gistButton").click(function (e) {
   getGist(e);
 });
 
+
 var gistUrlComplete = function (data) {
   var summaries = data.summaries || [];
   var url = data.url || "";
@@ -69,7 +70,7 @@ var gistUrlComplete = function (data) {
     '<p class="gistTitle">' + url + '</p>' +
     '<p class="gistBody">' + summaries.join(" ").replace(/["']/g, "") + '</p>' +
     '<p class="nofloat">' +
-    '<a class="gistLink" href="' + url + '"' + 'target="_blank">Read More at ' + url + '</a>' +
+    '<a class="gistLink" href="' + url + '"' + 'target="_blank">View to the full article at ' + url + '</a>' +
     '</p>' +
     '</div>';
 };

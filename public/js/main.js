@@ -7,43 +7,43 @@ function revealEmail() {
 
 
 $(window).on("load resize scroll", function(e) {
-  var scrollDist = $(window).scrollTop(),
-    brandBar = $('#brandBar').height(),
-    lightHeight = $('#header').outerHeight() - brandBar - 30,
-    darkHeight = $('#header').outerHeight() + brandBar - 30,
-    logoLight = $('#logo-light'),
-    logoDark = $('#logo-dark');
+  if ($(window).width() > 1300) {
+    var scrollDist = $(window).scrollTop(),
+      brandBar = $('#brandBar').height(),
+      lightHeight = $('#header').outerHeight() - brandBar - 30,
+      darkHeight = $('#header').outerHeight() + brandBar - 30,
+      logoLight = $('#logo-light'),
+      logoDark = $('#logo-dark');
 
-  if (scrollDist > lightHeight) {
-    logoLight.addClass('top');
-    // setTimeout(function() {
-    //   logoLight.addClass('left').removeClass('top');
-    //   }, 200);
-    setTimeout(function() {
-      logoLight.remove();
+    if (scrollDist > lightHeight) {
+      logoLight.addClass('top');
+      // setTimeout(function() {
+      //   logoLight.addClass('left').removeClass('top');
+      //   }, 200);
+      setTimeout(function() {
+        logoLight.remove();
       }, 200);
+    }
+    // else {
+    //   logoLight.removeClass('left');
+    // }
+
+    if (scrollDist > darkHeight) {
+      logoDark.removeClass('left');
+    }
+    // else {
+    //   logoDark.addClass('left');
+    // }
   }
-  // else {
-  //   logoLight.removeClass('left');
-  // }
-
-  if (scrollDist > darkHeight) {
-    logoDark.removeClass('left');
-  }
-
-  // else {
-  //   logoDark.addClass('left');
-  // }
-
 });
 
 // Cookie to remove 'welcome text'
 
 function session() {
   if (getCookie('visited')) {
-      $('#welcom').remove();
-      deleteCookie('visited');
+    $('#welcom').remove();
+    deleteCookie('visited');
   } else {
-      setCookie('visited','true',999); //999 days expiration
+    setCookie('visited', 'true', 999); //999 days expiration
   }
 }
