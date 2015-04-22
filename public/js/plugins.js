@@ -64,13 +64,14 @@ $("#gist.gistButton").click(function (e) {
 var gistUrlComplete = function (data) {
   var summaries = data.summaries || [];
   var url = data.url || "";
+  var hostname = new URL(url).hostname;
 
   gist.id('theGist').innerHTML = '';
   gist.id('theGist').innerHTML += '<div class="oneGist">' +
-    '<p class="gistTitle">' + url + '</p>' +
+    '<p class="gistTitle">' + hostname + '</p>' +
     '<p class="gistBody">' + summaries.join(" ").replace(/["']/g, "") + '</p>' +
     '<p class="nofloat">' +
-    '<a class="gistLink" href="' + url + '"' + 'target="_blank">View to the full article at ' + url + '</a>' +
+    '<a class="gistLink" href="' + url + '"' + 'target="_blank">View to the full article at ' + hostname + '</a>' +
     '</p>' +
     '</div>';
 };
@@ -83,7 +84,7 @@ var gistComplete = function (data) {
         '<p class="gistTitle">' + data[1][i] + '</p>' +
         '<p class="gistBody">' + data[2][i] + '</p>' +
         '<p class="nofloat">' +
-        '<a class="gistLink" href="http://en.wikipedia.org/wiki/' + data[1][i] + '"' + 'target="_blank">Read More at Wikipedia.org</a>' +
+        '<a class="gistLink" href="http://en.wikipedia.org/wiki/' + data[1][i] + '"' + 'target="_blank">Read more at www.wikipedia.org</a>' +
         '</p>' +
         '</div>';
     }

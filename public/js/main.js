@@ -5,12 +5,13 @@ function revealEmail() {
   }, 50);
 }
 
-$(window).load(function(){
-  var footerHeight = $('#footer').outerHeight(),
-      close = $('#close');
+$(window).on("load resize", function() {
+  $('#close').click(function(){
+    $('#footer').animate({'margin-bottom': '-100px'}, 100);
+  });
 
-  close.click(function(){
-    $('#footer').animate({'margin-bottom': - footerHeight}, 100);
+  $('#welcome').click(function(){
+    $('#welcome').slideUp(100);
   });
 });
 

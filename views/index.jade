@@ -30,11 +30,15 @@ html.no-js(lang='')
             .alpha
               h6.version.version-light-bg ALPHA
     #header.header
-      h3#welcome.welcome Welcome to Gistbot! Use this tool to summarize articles or&nbsp;
-        span.nw quickly reference topics.
+      h3#welcome.welcome
+        span.hidden-sm Welcome to Gistbot!&nbsp;
+        | This tool can summarize articles or&nbsp;
+        span.nw briefly describe just about any topic
+        span.hidden-sm .
+        button#close-top.close-top(aria-hidden='true') &times;
       h2.intro-text
-        | Paste a link or type something&nbsp;
-        span.nw to get the gist
+        | Paste a link or type anything to&nbsp;
+        span.nw get the gist
     .container
       .row
         form#gistInput.form
