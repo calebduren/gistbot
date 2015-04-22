@@ -13,12 +13,10 @@ var getGist = function (e) {
   var queryUrl, jqXhr;
   var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
 
-gist.id('getGist').onkeyup = function (e) {
-  if (!e.keyCode.toString().match(/^(37|38|39|40|13|16|17|18|224)$/)) {
-    var term = gist.id('getGist').value;
-
-    var queryUrl = 'http://en.wikipedia.org/w/api.php?action=opensearch&limit=10&format=json&callback=gistComplete&search=' + term;
-    var jqXhr = $.ajax({
+  if (regexp.test(term)) {
+    //It is a URL, hit gistbot-flask
+    queryUrl = 'http://gistbot-flask.herokuapp.com/api/website?url=' + term;
+    jqXhr = $.ajax({
       url: queryUrl,
       dataType: 'jsonp' //needed for cross-domain requests (ie gistbot.com calling wikipedia.com)
     });
