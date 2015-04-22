@@ -75,10 +75,14 @@ html.no-js(lang='')
         p.
             This document was last updated on February 25, 2015
 
-    .footer
+    #footer.footer
       .text-center
         p.footer-text
           | Gistbot © 2015.
+          a.footer-link(href='../../privacy-policy')
+            | Privacy
+            | Policy.
           br.xs
           a#email.footer-link(href='javascript:void(0)', onclick='revealEmail()') Contact or Leave a Suggestion.
+      button#close.close(aria-hidden='true') &times;
     script(type='text/javascript', src='js/main.js')

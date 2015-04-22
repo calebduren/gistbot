@@ -5,6 +5,14 @@ function revealEmail() {
   }, 50);
 }
 
+$(window).load(function(){
+  var footerHeight = $('#footer').outerHeight(),
+      close = $('#close');
+
+  close.click(function(){
+    $('#footer').animate({'margin-bottom': - footerHeight}, 100);
+  });
+});
 
 $(window).on("load resize scroll", function(e) {
   if ($(window).width() > 1300) {

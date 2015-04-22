@@ -42,7 +42,7 @@ html.no-js(lang='')
           button#gist.gistButton(type='button', value='checkvalue')
             | get the gist
         #theGist.gists
-    .footer
+    #footer.footer
       .text-center
         p.footer-text
           | Gistbot © 2015.
@@ -51,5 +51,6 @@ html.no-js(lang='')
             | Policy.
           br.xs
           a#email.footer-link(href='javascript:void(0)', onclick='revealEmail()') Contact or Leave a Suggestion.
+      button#close.close(aria-hidden='true') &times;
     script(type='text/javascript', src='js/plugins.js')
     script(type='text/javascript', src='js/main.js')
