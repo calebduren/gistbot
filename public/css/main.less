@@ -29,7 +29,7 @@ p {
     width: 100%;
     width: 100vw;
     height: 100%;
-    height: 160px;
+    height: 120px;
     max-height: 568px;
     display: -webkit-box;
     display: -moz-box;
@@ -306,9 +306,7 @@ h3 {
 
 .intro-text {
   text-shadow: 0 0 6px rgba(20,20,60,0.1);
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 8px;
+  margin-top: 22px;
   margin-bottom: 0;
 }
 
@@ -347,12 +345,12 @@ h5 {
   // box-shadow: inset 0 -4px 0 #F07864;
   padding: 10px;
   border: 1px solid #CECACA;
-  background: -moz-linear-gradient(top, rgba(236,236,236,1) 0%, rgba(246,246,246,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.6)), color-stop(100%,rgba(246,246,246,1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(236,236,236,1) 0%,rgba(246,246,246,1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(236,236,236,1) 0%,rgba(246,246,246,1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(236,236,236,1) 0%,rgba(246,246,246,1) 100%); /* IE10+ */
-  background: linear-gradient(to bottom, rgba(236,236,236,1) 0%,rgba(246,246,246,1) 100%); /* W3C */
+  background: -moz-linear-gradient(top, rgba(242,242,242,1) 0%, rgba(246,246,246,1) 80%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.6)), color-stop(80%,rgba(246,246,246,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(242,242,242,1) 0%,rgba(246,246,246,1) 80%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(242,242,242,1) 0%,rgba(246,246,246,1) 80%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(242,242,242,1) 0%,rgba(246,246,246,1) 80%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(242,242,242,1) 0%,rgba(246,246,246,1) 80%); /* W3C */
   margin: 5px auto 20px;
   letter-spacing: -.01em;
   font-size: 1.2em;
@@ -365,12 +363,12 @@ h5 {
 }
 
 .gistInput:focus {
-  background: -moz-linear-gradient(top,  rgba(255,255,255,.8) 0%, rgba(246,246,246,.8) 100%); /* FF3.6+ */
+  background: -moz-linear-gradient(top,  rgba(255,255,255,.9) 0%, rgba(246,246,246,.8) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.6)), color-stop(100%,rgba(246,246,246,.8))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  rgba(255,255,255,.8) 0%,rgba(246,246,246,.8) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  rgba(255,255,255,.8) 0%,rgba(246,246,246,.8) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  rgba(255,255,255,.8) 0%,rgba(246,246,246,.8) 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  rgba(255,255,255,.8) 0%,rgba(246,246,246,.8) 100%); /* W3C */
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,.9) 0%,rgba(246,246,246,.8) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(255,255,255,.9) 0%,rgba(246,246,246,.8) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(255,255,255,.9) 0%,rgba(246,246,246,.8) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(255,255,255,.9) 0%,rgba(246,246,246,.8) 100%); /* W3C */
   outline: none;
   color: #555555;
 
@@ -458,18 +456,19 @@ h5 {
   display: block;
 }
 
+
 .gistTitle {
   margin-top: 0;
   display: block;
   font-weight: 900;
   font-size: 1.6em;
-  margin-bottom: 1em;
+  margin-bottom: .4em;
 }
 
 .gistBody {
   display: block;
   font-size: 1.2em;
-  margin-bottom: 1.2em;
+  margin-bottom: .8em;
 }
 
 .gistLink {
@@ -477,7 +476,7 @@ h5 {
   text-align: center;
   text-decoration: none;
   right: 0;
-  margin-top: 1em;
+  margin-top: .4em;
   margin-right: 0;
   margin-left: auto;
   color: #FFFFFF;
@@ -738,6 +737,7 @@ li.first:before {
 @media (min-width: 768px) {
   .gistBody {
     font-size: 1.4em;
+    margin-bottom: 1.2em;
   }
   .gistButton {
     width: ~"calc(25% - 14px)";
@@ -749,6 +749,14 @@ li.first:before {
     width: ~"calc(75% - 38px)";
     margin: 5px 15px 5px 0;
   }
+
+  .gistTitle {
+    margin-bottom: 1em;
+  }
+  .gistLink {
+    margin-top: 1em;
+  }
+
   h2 {
     font-size: 2.4em;
   }

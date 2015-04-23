@@ -33,11 +33,11 @@ $(window).on("load resize", function() {
     //   'margin-bottom': '-100px'
     // }, 100);
 
-    $('#footer').slideUp(400, 'easeInBack');
+    $('#footer').slideUp(250, 'easeInBack');
   });
 
   $('#welcome').click(function() {
-    $('#welcome').slideUp(400, 'easeInBack');
+    $('#welcome').slideUp(250, 'easeInBack');
   });
 });
 
