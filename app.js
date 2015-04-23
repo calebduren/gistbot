@@ -1,4 +1,11 @@
-require('newrelic'); //app monitoring
+var prod;
+if (!process.env.PORT) {
+  prod = false;
+} else {
+  prod = true;
+  require('newrelic'); //app monitoring
+}
+
 var express = require('express');
 var bodyParser = require('body-parser');
 var http = require('http');
@@ -8,7 +15,7 @@ var app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
-if (!process.env.PORT) {
+if (!prod) {
   app.set('port', 3000);
 
   var lessMiddleware = require('less-middleware');
