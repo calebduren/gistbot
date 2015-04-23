@@ -64,12 +64,20 @@ $("#gist.gistButton").click(function (e) {
 var gistUrlComplete = function (data) {
   var summaries = data.summaries || [];
   var url = data.url || "";
-  var hostname = new URL(url).hostname;
+  var hostname = new URL(url).hostname.replace('www.','');
+
+  var inner = '';
+   for(i=0; i < summaries.length; i++) {
+        inner += '<li class="summ">'+summaries[i]+'</li>';
+   }
 
   gist.id('theGist').innerHTML = '';
   gist.id('theGist').innerHTML += '<div class="oneGist">' +
-    '<p class="gistTitle">' + hostname + '</p>' +
-    '<p class="gistBody">' + summaries.join(" ").replace(/["']/g, "") + '</p>' +
+    '<p class="gistTitle">From ' + hostname + '</p>' +
+    // '<p class="gistBody">' + summaries.join(" ").replace(/["']/g, "") + '</p>' +
+    '<ul class="gistBody">' +
+      inner +
+    '</ul>' +
     '<p class="nofloat">' +
     '<a class="gistLink" href="' + url + '"' + 'target="_blank">View to the full article at ' + hostname + '</a>' +
     '</p>' +

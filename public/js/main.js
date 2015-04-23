@@ -1,3 +1,25 @@
+// jQuery Easing plugin below
+jQuery.extend(jQuery.easing, {
+  easeInBack: function(x, t, b, c, d, s) {
+    if (s == undefined) s = 1.70158;
+    return c * (t /= d) * t * ((s + 1) * t - s) + b;
+  }
+});
+// End jQuery Easing
+
+// Remove the helper text box after first visit
+
+if (! localStorage.noFirstVisit) {
+    setTimeout(function() {
+      $('#welcome').animate({
+        'opacity': '1'
+      }, 600);
+    }, 800);
+    localStorage.noFirstVisit = "1";
+} else {
+  $('#welcome').remove();
+}
+
 function revealEmail() {
   $("#email").html('&#104;&#105;&#64;&#103;&#105;&#115;&#116;&#98;&#111;&#116;&#46;&#99;&#111;&#109;');
   setTimeout(function() {
@@ -6,12 +28,16 @@ function revealEmail() {
 }
 
 $(window).on("load resize", function() {
-  $('#close').click(function(){
-    $('#footer').animate({'margin-bottom': '-100px'}, 100);
+  $('#close').click(function() {
+    // $('#footer').animate({
+    //   'margin-bottom': '-100px'
+    // }, 100);
+
+    $('#footer').slideUp(400, 'easeInBack');
   });
 
-  $('#welcome').click(function(){
-    $('#welcome').slideUp(100);
+  $('#welcome').click(function() {
+    $('#welcome').slideUp(400, 'easeInBack');
   });
 });
 
@@ -45,14 +71,3 @@ $(window).on("load resize scroll", function(e) {
     // }
   }
 });
-
-// Cookie to remove 'welcome text'
-
-function session() {
-  if (getCookie('visited')) {
-    $('#welcom').remove();
-    deleteCookie('visited');
-  } else {
-    setCookie('visited', 'true', 999); //999 days expiration
-  }
-}
