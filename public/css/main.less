@@ -1,3 +1,10 @@
+// Variables
+
+@gistbot: #F07864;
+@gistbot-blue: #52dde8;
+@light-gray: #F6F6F6;
+@gray: #CECACA;
+
 html {
   color: #555;
   font-size: 1em;
@@ -20,7 +27,7 @@ p {
 }
 
 .header {
-    background: #52dde8 url("/img/gistbot-bg.png") no-repeat center bottom;
+    background: @gistbot-blue url("/img/gistbot-bg.png") no-repeat center bottom;
     -webkit-background-size: cover;
      -moz-background-size: cover;
        -o-background-size: cover;
@@ -28,6 +35,7 @@ p {
     box-shadow: inset 0 0 10px 2px rgba(20,20,60,0.08);
     width: 100%;
     width: 100vw;
+    max-width: 100%;
     height: 100%;
     height: 120px;
     max-height: 568px;
@@ -45,6 +53,8 @@ p {
     padding: 0;
     text-align: center;
     z-index: -10;
+    -webkit-transition: padding 200ms ease-out;
+    -ms-transition: padding 200ms ease-out;
     transition: padding 200ms ease-out;
 }
 
@@ -59,24 +69,24 @@ p {
 }
 
 ::-webkit-input-placeholder {
-  color: #CECACA;
+  color: @gray;
   font-weight: 300;
 }
 
 :-moz-placeholder {
   /* Firefox 18- */
-  color: #CECACA;
+  color: @gray;
   font-weight: 300;
 }
 
 ::-moz-placeholder {
   /* Firefox 19+ */
-  color: #CECACA;
+  color: @gray;
   font-weight: 300;
 }
 
 :-ms-input-placeholder {
-  color: #CECACA;
+  color: @gray;
   font-weight: 300;
 }
 
@@ -157,7 +167,7 @@ textarea {
   background-color: transparent;
 }
 .brand-border {
-  border-top: 6px solid #F07864;
+  border-top: 6px solid @gistbot;
   width: 100%;
   position: fixed;
   top: 0;
@@ -180,10 +190,11 @@ textarea {
   letter-spacing: 0.01em;
   vertical-align: top;
   font-weight: 500;
-  text-rendering: optimizeLegibility;
   -ms-transform: translate(0, 0);
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
+  -webkit-transition: all 250ms ease-in-out;
+  -ms-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
 }
 
@@ -198,17 +209,17 @@ textarea {
   letter-spacing: 0.01em;
   vertical-align: top;
   font-weight: 500;
-  text-rendering: optimizeLegibility;
   -ms-transform: translate(0, 0);
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
+  -webkit-transition: all 250ms ease-in-out;
+  -ms-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
-
 }
 
 .logo-dark {
   margin: 0 2px 0 4px;
-  color: #F07864;
+  color: @gistbot;
   font-size: 18px;
   position: absolute;
   width: 172px;
@@ -217,18 +228,20 @@ textarea {
   letter-spacing: 0.01em;
   vertical-align: top;
   font-weight: 500;
-  text-rendering: optimizeLegibility;
   -ms-transform: translate(0, 0);
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
+  -webkit-transition: all 250ms ease-in-out;
+  -ms-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
-
 }
 
 .top {
   -ms-transform: translateY(-300px);
   -webkit-transform: translateY(-300px);
   transform: translateY(-300px);
+  -webkit-transition: all 250ms ease-in-out;
+  -ms-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
 }
 
@@ -236,34 +249,33 @@ textarea {
   -ms-transform: translateX(-300px);
   -webkit-transform: translateX(-300px);
   transform: translateX(-300px);
+  -webkit-transition: all 250ms ease-in-out;
+  -ms-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
 }
 
-.alpha {
+.version-container {
   display: inline-block;
 }
 
 .version {
   font-size: .65em;
-  line-height: 1.2;
   margin: 0 8px;
   padding: 0 2px;
   border-radius: 2px;
-  -ms-transform: translateY(-2px);
-  -webkit-transform: translateY(-2px);
-  transform: translateY(-2px);
+  vertical-align: middle;
 }
 
 .version-dark-bg {
-  color: #F07864;
+  color: @gistbot;
   background-color: #FFFFFF;
   border: 2px solid #FFFFFF;
 }
 
 .version-light-bg {
-  color: #F07864;
+  color: @gistbot;
   background-color: transparent;
-  border: 2px solid #F07864;
+  border: 2px solid @gistbot;
 }
 
 h2 {
@@ -323,7 +335,7 @@ h5 {
   text-align: center;
   margin: 15px auto 40px;
   padding: 0;
-  background-color: #F6F6F6;
+  background-color: @light-gray;
   background: -moz-linear-gradient(top,  rgba(255,255,255,0.6) 0%, rgba(255,255,255,1) 45%, rgba(255,255,255,1) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.6)), color-stop(45%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(255,255,255,1) 45%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
@@ -340,10 +352,10 @@ h5 {
   max-width: 100%;
   vertical-align: bottom;
   border-radius: 2px;
-  color: #CECACA;
+  color: @gray;
   box-shadow: inset 0px 4px 10px rgba(20,20,60,0.05);
   padding: 10px;
-  border: 1px solid #CECACA;
+  border: 1px solid @gray;
   background: -moz-linear-gradient(top, rgba(242,242,242,1) 0%, rgba(246,246,246,1) 80%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.6)), color-stop(80%,rgba(246,246,246,1))); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top, rgba(242,242,242,1) 0%,rgba(246,246,246,1) 80%); /* Chrome10+,Safari5.1+ */
@@ -380,20 +392,20 @@ h5 {
 }
 
 .gistButton {
-  background: #F07864; /* Old browsers */
-  background: -moz-linear-gradient(top,  #F07864 0%, #e26a56 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F07864), color-stop(100%,#e26a56)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #F07864 0%,#e26a56 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #F07864 0%,#e26a56 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #F07864 0%,#e26a56 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #F07864 0%,#e26a56 100%); /* W3C */
+  background: @gistbot; /* Old browsers */
+  background: -moz-linear-gradient(top,  @gistbot 0%, #e26a56 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@gistbot), color-stop(100%,#e26a56)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  @gistbot 0%,#e26a56 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  @gistbot 0%,#e26a56 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  @gistbot 0%,#e26a56 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  @gistbot 0%,#e26a56 100%); /* W3C */
   width: 100%;
   max-width: 100%;
   color: #FFFFFF;
   padding: 4px 12px 10px;
   margin: 5px auto 5px;
   font-weight: 500;
-  border: 1px solid #F07864;
+  border: 1px solid @gistbot;
   border-radius: 2px;
   font-size: 1.4em;
   line-height: 1.45;
@@ -407,12 +419,12 @@ h5 {
 
 .gistButton:hover {
   background: #e26a56; /* Old browsers */
-  background: -moz-radial-gradient(center, ellipse cover,  #e26a56 0%, #F07864 100%); /* FF3.6+ */
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#e26a56), color-stop(100%,#F07864)); /* Chrome,Safari4+ */
-  background: -webkit-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* Opera 12+ */
-  background: -ms-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* IE10+ */
-  background: radial-gradient(ellipse at center,  #e26a56 0%,#F07864 100%); /* W3C */
+  background: -moz-radial-gradient(center, ellipse cover,  #e26a56 0%, @gistbot 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#e26a56), color-stop(100%,@gistbot)); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover,  #e26a56 0%,@gistbot 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover,  #e26a56 0%,@gistbot 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover,  #e26a56 0%,@gistbot 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center,  #e26a56 0%,@gistbot 100%); /* W3C */
   box-shadow: 0px 1px 8px 1px rgba(20,20,60,0.2);
   border: 1px solid #e26a56;
   -webkit-transition: all 75ms ease-out;
@@ -423,15 +435,15 @@ h5 {
 }
 
 .gistButton:focus, .gistButton:active {
-  color: #F6F6F6;
+  color: @light-gray;
   background: #e26a56; /* Old browsers */
   border: 1px solid #e26a56;
-  background: -moz-radial-gradient(center, ellipse cover,  #e26a56 0%, #F07864 100%); /* FF3.6+ */
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#e26a56), color-stop(100%,#F07864)); /* Chrome,Safari4+ */
-  background: -webkit-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* Opera 12+ */
-  background: -ms-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* IE10+ */
-  background: radial-gradient(ellipse at center,  #e26a56 0%,#F07864 100%); /* W3C */
+  background: -moz-radial-gradient(center, ellipse cover,  #e26a56 0%, @gistbot 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#e26a56), color-stop(100%,@gistbot)); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover,  #e26a56 0%,@gistbot 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover,  #e26a56 0%,@gistbot 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover,  #e26a56 0%,@gistbot 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center,  #e26a56 0%,@gistbot 100%); /* W3C */
   box-shadow: inset 0px 1px 8px rgba(20,20,60,0.2);
 }
 
@@ -457,7 +469,7 @@ h5 {
 .gistTitle {
   margin-top: 0;
   display: block;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 1.6em;
   margin-bottom: .4em;
 }
@@ -479,13 +491,13 @@ h5 {
   color: #FFFFFF;
   max-width: ~"calc(100% - 16px)";
   font-size: .9em;
-  background: #F07864; /* Old browsers */
-  background: -moz-linear-gradient(top,  #F07864 0%, #e26a56 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F07864), color-stop(100%,#e26a56)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #F07864 0%,#e26a56 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #F07864 0%,#e26a56 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #F07864 0%,#e26a56 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #F07864 0%,#e26a56 100%); /* W3C */
+  background: @gistbot; /* Old browsers */
+  background: -moz-linear-gradient(top,  @gistbot 0%, #e26a56 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@gistbot), color-stop(100%,#e26a56)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  @gistbot 0%,#e26a56 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  @gistbot 0%,#e26a56 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  @gistbot 0%,#e26a56 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  @gistbot 0%,#e26a56 100%); /* W3C */
   box-shadow: 0 0 1px 1px rgba(20,20,60,0.1);
   padding: 4px 8px 6px;
   border-radius: 2px;
@@ -498,12 +510,12 @@ h5 {
 }
 
 .gistLink:hover {
-  background: -moz-radial-gradient(center, ellipse cover,  #e26a56 0%, #F07864 100%); /* FF3.6+ */
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#e26a56), color-stop(100%,#F07864)); /* Chrome,Safari4+ */
-  background: -webkit-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* Opera 12+ */
-  background: -ms-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* IE10+ */
-  background: radial-gradient(ellipse at center,  #e26a56 0%,#F07864 100%); /* W3C */
+  background: -moz-radial-gradient(center, ellipse cover,  #e26a56 0%, @gistbot 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#e26a56), color-stop(100%,@gistbot)); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover,  #e26a56 0%,@gistbot 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover,  #e26a56 0%,@gistbot 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover,  #e26a56 0%,@gistbot 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center,  #e26a56 0%,@gistbot 100%); /* W3C */
   box-shadow: 0px 1px 6px 1px rgba(20,20,60,0.1);
   color: #FFFFFF;
   -webkit-transition: all 75ms ease-in-out;
@@ -514,20 +526,20 @@ h5 {
 }
 
 .gistLink:active, .gistLink:focus {
-  color: #F6F6F6;
-  background: -moz-radial-gradient(center, ellipse cover,  #e26a56 0%, #F07864 100%); /* FF3.6+ */
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#e26a56), color-stop(100%,#F07864)); /* Chrome,Safari4+ */
-  background: -webkit-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* Opera 12+ */
-  background: -ms-radial-gradient(center, ellipse cover,  #e26a56 0%,#F07864 100%); /* IE10+ */
-  background: radial-gradient(ellipse at center,  #e26a56 0%,#F07864 100%); /* W3C */
+  color: @light-gray;
+  background: -moz-radial-gradient(center, ellipse cover,  #e26a56 0%, @gistbot 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#e26a56), color-stop(100%,@gistbot)); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover,  #e26a56 0%,@gistbot 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover,  #e26a56 0%,@gistbot 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover,  #e26a56 0%,@gistbot 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center,  #e26a56 0%,@gistbot 100%); /* W3C */
   box-shadow: inset 0px 1px 6px rgba(20,20,60,0.1);
 }
 
 .oneGist {
   margin: 40px auto;
   padding: 10px 15px 20px;
-  border: 5px solid #F6F6F6;
+  border: 5px solid @light-gray;
   border-radius: 2px;
   background-color: #FFFFFF;
 }
@@ -543,7 +555,7 @@ h5 {
   right: 0;
   bottom: 0;
   width: 100%;
-  background-color: #F6F6F6;
+  background-color: @light-gray;
   text-align: center;
   margin: 15px 0 0;
   padding: 2px 0;
@@ -552,7 +564,7 @@ h5 {
 .footer-text {
   font-weight: 400;
   padding: 0 5px;
-  color: #CECACA;
+  color: @gray;
   text-align: center;
   font-size: .85em;
   line-height: 1.4;
@@ -561,13 +573,13 @@ h5 {
 }
 
 .footer-link {
-  color: #CECACA;
+  color: @gray;
   text-decoration: none;
   margin-left: 6px;
 }
 
 .footer-link:hover {
-  color: #F07864;
+  color: @gistbot;
   text-shadow: none;
   text-decoration: none;
 }
@@ -588,7 +600,7 @@ h5 {
 }
 
 .close-top:hover {
-  color: #F07864;
+  color: @gistbot;
   text-shadow: 0 1px 5px rgba(20,20,60,0.1);
   cursor: pointer;
   border: none;
@@ -596,7 +608,7 @@ h5 {
 }
 
 .close-top:focus, .close-top:active {
-  color: #F07864;
+  color: @gistbot;
   cursor: pointer;
   outline: none;
   border: none;
@@ -608,7 +620,7 @@ h5 {
   bottom: 10px;
   position: absolute;
   font-weight: 400;
-  color: #CECACA;
+  color: @gray;
   font-size: 1.2em;
   line-height: 1.4;
   margin: 0;
@@ -618,20 +630,20 @@ h5 {
   background-color: transparent;
 }
 .close:hover {
-  color: #F07864;
+  color: @gistbot;
   cursor: pointer;
   border: none;
   background-color: transparent;
 }
 .close:focus, .close:active {
-  color: #F07864;
+  color: @gistbot;
   cursor: pointer;
   outline: none;
   border: none;
   background-color: transparent;
 }
 .privacy {
-  background-color: #F6F6F6;
+  background-color: @light-gray;
   margin: -46px auto 40px;
   padding: 20px;
   border-radius: 2px;
@@ -709,7 +721,7 @@ li.first:before {
   .form {
     margin: -36px auto 40px;
     padding: 10px;
-    background-color: #F6F6F6;
+    background-color: @light-gray;
     background: -moz-linear-gradient(top,  rgba(246,246,246,0.6) 0%, rgba(246,246,246,1) 45%, rgba(246,246,246,1) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(246,246,246,0.6)), color-stop(45%,rgba(246,246,246,1)), color-stop(100%,rgba(246,246,246,1))); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(top,  rgba(246,246,246,0.6) 0%,rgba(246,246,246,1) 45%,rgba(246,246,246,1) 100%); /* Chrome10+,Safari5.1+ */
@@ -768,6 +780,8 @@ li.first:before {
   }
   .header {
     height: 260px;
+    -webkit-transition: height 200ms ease-out;
+    -ms-transition: height 200ms ease-out;
     transition: height 200ms ease-out;
   }
 
@@ -776,19 +790,23 @@ li.first:before {
     margin-left: auto;
     text-align: center;
     margin-right: auto;
-    background: -moz-linear-gradient(top, #52dde8 0, rgba(82,221,232,0.6) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #52dde8), color-stop(100%, rgba(82,221,232,0.6)));
-    background: -webkit-linear-gradient(top, #52dde8 0, rgba(82,221,232,0.6) 100%);
-    background: -o-linear-gradient(top, #52dde8 0, rgba(82,221,232,0.6) 100%);
-    background: -ms-linear-gradient(top, #52dde8 0, rgba(82,221,232,0.6) 100%);
-    background: linear-gradient(to bottom, #52dde8 0, rgba(82,221,232,0.6) 100%);
+    background: -moz-linear-gradient(top, @gistbot-blue 0, rgba(82,221,232,0.6) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, @gistbot-blue), color-stop(100%, rgba(82,221,232,0.6)));
+    background: -webkit-linear-gradient(top, @gistbot-blue 0, rgba(82,221,232,0.6) 100%);
+    background: -o-linear-gradient(top, @gistbot-blue 0, rgba(82,221,232,0.6) 100%);
+    background: -ms-linear-gradient(top, @gistbot-blue 0, rgba(82,221,232,0.6) 100%);
+    background: linear-gradient(to bottom, @gistbot-blue 0, rgba(82,221,232,0.6) 100%);
     border-radius: 2px;
     padding: 2px 5px;
     box-shadow: 0 1px 8px rgba(20,20,60,0.1);
+    -webkit-transition: box-shadow 100ms;
+    -ms-transition: box-shadow 100ms;
     transition: box-shadow 100ms;
   }
   .welcome:hover {
     box-shadow: 0 1px 12px 2px rgba(20,20,60,0.1);
+    -webkit-transition: box-shadow 100ms;
+    -ms-transition: box-shadow 100ms;
     transition: box-shadow 100ms;
   }
   .oneGist {
@@ -821,6 +839,8 @@ li.first:before {
   }
   .header {
     height: 280px;
+    -webkit-transition: height 200ms ease-out;
+    -ms-transition: height 200ms ease-out;
     transition: height 200ms ease-out;
   }
   .hidden-sm {
@@ -868,6 +888,8 @@ li.first:before {
 @media (min-width: 882px) and (min-height: 1000px) {
   .header {
     height: 340px;
+    -webkit-transition: height 200ms ease-out;
+    -ms-transition: height 200ms ease-out;
     transition: height 200ms ease-out;
   }
 }
