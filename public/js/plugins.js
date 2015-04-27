@@ -4,10 +4,6 @@ var gist = {
   }
 };
 
-setTimeout(function () {
-  gist.id('getGist').focus();
-}, 750);
-
 var getGist = function (e) {
   var term = gist.id('getGist').value;
   var queryUrl, jqXhr;
