@@ -40,16 +40,18 @@ html.no-js(lang='')
           h1#logo-dark.logo-dark.left Gistbot
             span.version.version-light-bg ALPHA
     #header.header
-      #welcome.welcome
-        h3.welcome-heading
-          span.hidden-sm Welcome to Gistbot!&nbsp;
-          | This site can summarize articles or&nbsp;
-          span.nw briefly describe just about any topic
-          span.hidden-sm .
-          button#close-top.close-top(aria-hidden='true') &times;
-      h2#intro.intro-text
-        | Paste a link or type anything&nbsp;
-        span.nw to get the gist
+      .intro-container
+        .welcome-container
+          #welcome.welcome
+            h3.welcome-heading
+              span.hidden-sm Welcome to Gistbot!&nbsp;
+              | This site can summarize articles or&nbsp;
+              span.nw briefly describe just about any topic
+              span.hidden-sm .
+              button#close-top.close-top(aria-hidden='true') &times;
+        h2#intro.intro-text
+          | Paste a link or type anything&nbsp;
+          span.nw to get the gist
     .container
       .row
         form#gistInput.form

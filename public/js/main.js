@@ -14,10 +14,11 @@ $(document).ready( function() {
   var welcome = $('#welcome'),
       close = $('#close'),
       footer = $('#footer');
-if (!localStorage.noFirstVisit) {
+  if ( !localStorage.noFirstVisit && $(window).width > 768 ) {
     welcome.slideDown(400, 'easeOutCirc').animate({'opacity': '1'}, 400);
- localStorage.noFirstVisit = "1";
-  } else {
+    localStorage.noFirstVisit = "1";
+  }
+  else {
     welcome.remove();
   }
 });
@@ -55,7 +56,7 @@ $(window).load( function() {
 
 // Animated logo
 $(window).on("load resize scroll", function(e) {
-  if ($(window).width() > 1300) {
+  if ($(window).width() > 1248) {
     var scrollDist = $(window).scrollTop(),
       brandBar = $('#brandBar').height(),
       lightHeight = $('#header').outerHeight() - brandBar - 30,
