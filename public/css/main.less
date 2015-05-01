@@ -283,14 +283,13 @@ textarea {
 
 h2 {
   font-size: 2em;
-  font-size: ~"calc(5.66vw - 2px)";
+  font-size: ~"calc(5.65vw - 2px)";
   color: #FFFFFF;
   font-family: "Helvetica Neue",Helvetica,sans-serif;
   font-weight: 300;
   text-align: center;
   letter-spacing: -0.01em;
   line-height: 1;
-  margin-left: -0.02em;
 }
 h3 {
   text-align: center;
@@ -329,6 +328,7 @@ h3 {
   text-shadow: 0 0 6px rgba(20,20,60,0.1);
   margin-top: 4px;
   margin-bottom: 0;
+  margin-left: -0.08em;
 }
 
 h5 {
@@ -751,15 +751,7 @@ li.first:before {
     width: auto;
     font-size: 1em;
   }
-  .logo-light {
-    margin: 0 2px 0 4px;
-    font-size: 18px;
-  }
 
-  .logo-dark {
-    margin: 0 2px 0 4px;
-    font-size: 18px;
-  }
 }
 
 @media (min-width: 768px) {
@@ -791,6 +783,8 @@ li.first:before {
   }
   .intro-text {
     margin-bottom: 86px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .form {
     margin: -76px auto 40px;
@@ -845,9 +839,14 @@ li.first:before {
   li.first:before {
    content: " ";
    }
+   .logo-light {
+     font-size: 18px;
+   }
+
+   .logo-dark {
+     font-size: 18px;
+   }
 }
-
-
 
 @media (min-width: 992px) {
   .form {
@@ -890,6 +889,13 @@ li.first:before {
   h2 {
     font-size: 2.8em;
     line-height: 1.1;
+  }
+  .logo-light {
+    margin: 0 2px 0 4px;
+  }
+
+  .logo-dark {
+    margin: 0 2px 0 4px;
   }
 }
 
