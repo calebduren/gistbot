@@ -1,24 +1,26 @@
-{
-  desc: "Privacy Policy",
-}
-include .templates/index.jade
+- var title= 'Privacy Policy | Gistbot'
+- var description = 'Gistbot Privacy Policy'
+- var templateName = 'privacyPolicy'
+
+include templates/head.jade
   body
-    .brand-border
-    #brandBar.brand
-      .brand-container
-        a(href='/').logo-container
-          h1#logo-light.logo-light Gistbot
-            .alpha
-              h6.version.version-dark-bg BETA
-          h1#logo-dark.logo-dark.left Gistbot
-            .alpha
-              h6.version.version-light-bg BETA
+    include templates/logo.jade
     #header.header
-      h2.intro-text Privacy Policy
+      .intro-container
+        .welcome-container
+          #welcome.welcome
+            h3.welcome-heading
+              span.hidden-sm Welcome to Gistbot!&nbsp;
+              | This site can summarize articles or&nbsp;
+              span.nw briefly describe just about any topic
+              span.hidden-sm .
+              button#close-top.close-top(aria-hidden='true') &times;
+        h2#intro.intro-text
+          | Paste a link or type anything&nbsp;
+          span.nw to get the gist
     .container
       .row.privacy
-        p.
-          This Privacy Policy governs the manner in which Gistbot collects, uses, maintains and discloses information collected from users (each, a "User") of the gistbot.com website ("Site"). This privacy policy applies to the Site and all products and services offered by Gistbot.
+        p This Privacy Policy governs the manner in which Gistbot collects, uses, maintains and discloses information collected from users (each, a "User") of the gistbot.com website ("Site"). This privacy policy applies to the Site and all products and services offered by Gistbot.
         h5 Personal identification information
         p.
           We may collect personal identification information from Users in a variety of ways, including, but not limited to, when Users visit our site, fill out a form, and in connection with other activities, services, features or resources we make available on our Site.. Users may visit our Site anonymously. We will collect personal identification information from Users only if they voluntarily submit such information to us. Users can always refuse to supply personally identification information, except that it may prevent them from engaging in certain Site related activities.
@@ -39,8 +41,10 @@ include .templates/index.jade
           li
             To improve our Site. We may use feedback you provide to improve our products and services.
         h5 How we protect your information
-        p.We adopt appropriate data collection, storage and processing practices and security measures to protect against unauthorized access, alteration, disclosure or destruction of your personal information, username, password, transaction information and data stored on our Site.
-        p.Sensitive and private data exchange between the Site and its Users happens over a SSL secured communication channel and is encrypted and protected with digital signatures.
+        p. 
+          We adopt appropriate data collection, storage and processing practices and security measures to protect against unauthorized access, alteration, disclosure or destruction of your personal information, username, password, transaction information and data stored on our Site.
+        p. 
+          Sensitive and private data exchange between the Site and its Users happens over a SSL secured communication channel and is encrypted and protected with digital signatures.
         h5 Sharing your personal information
         p.
           We do not sell, trade, or rent Users personal identification information to others. We may share generic aggregated demographic information not linked to any personal identification information regarding visitors and users with our business partners, trusted affiliates and advertisers for the purposes outlined above.
@@ -52,21 +56,10 @@ include .templates/index.jade
           Gistbot has the discretion to update this privacy policy at any time. When we do, we will post a notification on the main page of our Site. We encourage Users to frequently check this page for any changes to stay informed about how we are helping to protect the personal information we collect. You acknowledge and agree that it is your responsibility to review this privacy policy periodically and become aware of modifications.
         h5 Your acceptance of these terms
         p.
-            By using this Site, you signify your acceptance of this policy and terms of service. If you do not agree to this policy, please do not use our Site. Your continued use of the Site following the posting of changes to this policy will be deemed your acceptance of those changes.
+          By using this Site, you signify your acceptance of this policy and terms of service. If you do not agree to this policy, please do not use our Site. Your continued use of the Site following the posting of changes to this policy will be deemed your acceptance of those changes.
         h5 Contacting us
         p.
-            If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us at help@gistbot.com.
+          If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us at help@gistbot.com.
         p.
-            This document was last updated on February 25, 2015
-
-    #footer.footer
-      .text-center
-        p.footer-text
-          | Gistbot © 2015.
-          a.footer-link(href='../../privacy-policy')
-            | Privacy
-            | Policy.
-          br.xs
-          a#email.footer-link(href='javascript:void(0)', onclick='revealEmail()') Contact or Leave a Suggestion.
-      button#close.close(aria-hidden='true') &times;
-    script(type='text/javascript', src='js/main.js')
+          This document was last updated on February 25, 2015
+    include templates/footer.jade

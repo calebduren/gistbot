@@ -1,14 +1,10 @@
+- var title= 'Gistbot Home'
+- var description = 'Welcome to Gistbot, a productivity app to quickly get the main ideas behind an article or topic'
+- var templateName = 'home'
+
 include templates/head.jade
-  var desc: "Gistbot is a productivity app to help you get the bullet points of an article or topic"
   body
-    .brand-border
-    #brandBar.brand
-      .brand-container
-        .logo-container
-          h1#logo-light.logo-light Gistbot
-            span.version.version-dark-bg ALPHA
-          h1#logo-dark.logo-dark.left Gistbot
-            span.version.version-light-bg ALPHA
+    include templates/logo.jade
     #header.header
       .intro-container
         .welcome-container
@@ -26,7 +22,5 @@ include templates/head.jade
       .row
         form#gistInput.form
           input#getGist.gistInput(type='text', name='Gistbot', placeholder='i.e. Nikola Tesla or http://www.wired.com/2015/02/fcc-chairman-wheeler-net-neutrality/')
-          button#gist.gistButton(type='button', value='checkvalue')
-            | get the gist
         #theGist.gists
     include templates/footer.jade

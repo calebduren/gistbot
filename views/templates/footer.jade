@@ -2,12 +2,13 @@
   .text-center
     p.footer-text
       | Gistbot © 2015.
-      a.footer-link(href='../../privacy-policy')
-        | Privacy
-        | Policy.
+      unless templateName == 'privacyPolicy'
+        a.footer-link(href='/privacy-policy')
+          | Privacy
+          | Policy.
       br.xs
       a#email.footer-link(href='javascript:void(0)', onclick='revealEmail()') Contact or Leave a Suggestion.
   button#close.close(aria-hidden='true') &times;
     script
-      include plugins.js
-      include main.js
+      include js/plugins.js
+      include js/main.js
