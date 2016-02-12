@@ -1,0 +1,13 @@
+#footer.footer
+  .text-center
+    p.footer-text
+      | Gistbot © 2015.
+      a.footer-link(href='../../privacy-policy')
+        | Privacy
+        | Policy.
+      br.xs
+      a#email.footer-link(href='javascript:void(0)', onclick='revealEmail()') Contact or Leave a Suggestion.
+  button#close.close(aria-hidden='true') &times;
+    script
+      include plugins.js
+      include main.js

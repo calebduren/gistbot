@@ -1,35 +1,5 @@
-doctype html
-html.no-js(lang='')
-  head
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-    title Gistbot
-    meta(name='description', content='Get a summary of a topic or article in a jiffy with Gistbot')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='apple-touch-icon-precomposed', sizes='57x57', href='/img/apple-touch-icon-57x57.png')
-    link(rel='apple-touch-icon-precomposed', sizes='114x114', href='/img/apple-touch-icon-114x114.png')
-    link(rel='apple-touch-icon-precomposed', sizes='72x72', href='/img/apple-touch-icon-72x72.png')
-    link(rel='apple-touch-icon-precomposed', sizes='144x144', href='/img/apple-touch-icon-144x144.png')
-    link(rel='apple-touch-icon-precomposed', sizes='120x120', href='/img/apple-touch-icon-120x120.png')
-    link(rel='apple-touch-icon-precomposed', sizes='152x152', href='/img/apple-touch-icon-152x152.png')
-    link(rel='icon', type='image/png', href='/img/favicon-32x32.png', sizes='32x32')
-    link(rel='icon', type='image/png', href='/img/favicon-16x16.png', sizes='16x16')
-    meta(name='application-name', content='Gistbot')
-    meta(name='msapplication-TileColor', content='#FFFFFF')
-    meta(name='msapplication-TileImage', content='/img/mstile-144x144.png')
-    link(rel='stylesheet', href='css/normalize.css')
-    link(rel='stylesheet', href='css/main.css')
-    if(locals.livereload)
-      script(src='//localhost:35729/livereload.js')
-    script(type='text/javascript', src='js/vendor/jquery-2.1.3.min.js')
-    <!--[if lte IE 11]>
-    link(rel='stylesheet', href='css/ie.css')
-    <![endif]-->
-    <!--[if lt IE 9]>
-    script(src='//html5shiv.googlecode.com/svn/trunk/html5.js')
-    script.
-      window.html5 || document.write('<script src='js/vendor/html5shiv.js'><\\/script>')
-    <![endif]-->
+include templates/head.jade
+  var desc: "Gistbot is a productivity app to help you get the bullet points of an article or topic"
   body
     .brand-border
     #brandBar.brand
@@ -59,15 +29,4 @@ html.no-js(lang='')
           button#gist.gistButton(type='button', value='checkvalue')
             | get the gist
         #theGist.gists
-    #footer.footer
-      .text-center
-        p.footer-text
-          | Gistbot © 2015.
-          a.footer-link(href='../../privacy-policy')
-            | Privacy
-            | Policy.
-          br.xs
-          a#email.footer-link(href='javascript:void(0)', onclick='revealEmail()') Contact or Leave a Suggestion.
-      button#close.close(aria-hidden='true') &times;
-    script(type='text/javascript', src='js/plugins.js')
-    script(type='text/javascript', src='js/main.js')
+    include templates/footer.jade

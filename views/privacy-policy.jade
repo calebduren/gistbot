@@ -1,23 +1,7 @@
-doctype html
-html.no-js(lang='')
-  head
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-    title Gistbot
-    meta(name='description', content='Get a summary of a topic or article in a jiffy with Gistbot')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='apple-touch-icon', href='apple-touch-icon.png')
-    link(rel='icon', type='image/png', href='img/favicon-32x32.png', sizes='32x32')
-    link(rel='icon', type='image/png', href='img/favicon-16x16.png', sizes='16x16')
-    link(rel='stylesheet', href='css/normalize.css')
-    link(rel='stylesheet', href='css/main.css')
-    if(locals.env !== "prod")
-      script(src='//localhost:35729/livereload.js')
-    script(type='text/javascript', src='js/vendor/jquery-2.1.3.min.js')
-    //if lt IE 9
-      script(src='//html5shiv.googlecode.com/svn/trunk/html5.js')
-      script.
-        window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\\/script>')
+{
+  desc: "Privacy Policy",
+}
+include .templates/index.jade
   body
     .brand-border
     #brandBar.brand
@@ -25,10 +9,10 @@ html.no-js(lang='')
         a(href='/').logo-container
           h1#logo-light.logo-light Gistbot
             .alpha
-              h6.version.version-dark-bg ALPHA
+              h6.version.version-dark-bg BETA
           h1#logo-dark.logo-dark.left Gistbot
             .alpha
-              h6.version.version-light-bg ALPHA
+              h6.version.version-light-bg BETA
     #header.header
       h2.intro-text Privacy Policy
     .container

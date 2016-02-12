@@ -9,19 +9,6 @@ jQuery.extend(jQuery.easing, {
   }
 });
 
-// Remove the helper text box after first visit
-$(document).ready( function() {
-  var welcome = $('#welcome'),
-      close = $('#close'),
-      footer = $('#footer');
-  if ( !localStorage.noFirstVisit && $(window).width > 768 ) {
-    welcome.slideDown(400, 'easeOutCirc').animate({'opacity': '1'}, 400);
-    localStorage.noFirstVisit = "1";
-  }
-  else {
-    welcome.remove();
-  }
-});
 
 $(document).ready( function() {
   // function to detect mobile browsers, will be used in the focus function directly below it
@@ -35,15 +22,15 @@ $(document).ready( function() {
   } else {
     welcome.remove();
   }
-});
 
-// Put the email address in footer when "contact us" is clicked
-function revealEmail() {
-  $("#email").html('&#104;&#105;&#64;&#103;&#105;&#115;&#116;&#98;&#111;&#116;&#46;&#99;&#111;&#109;');
-  setTimeout(function() {
-    $("#email").attr('href', 'mailto:hi@gistbot.com');
-  }, 50);
-}
+  // Put the email address in footer when "contact us" is clicked
+  function revealEmail() {
+    $("#email").html('&#104;&#105;&#64;&#103;&#105;&#115;&#116;&#98;&#111;&#116;&#46;&#99;&#111;&#109;');
+    setTimeout(function() {
+      $("#email").attr('href', 'mailto:hi@gistbot.com');
+    }, 50);
+  }
+});
 
 // Clicking welcome text and footer removes them
 $(window).load( function() {
@@ -56,25 +43,4 @@ $(window).load( function() {
   welcome.click(function() {
     welcome.animate({'boxShadow':'0 0 0 rgba(0,0,0,0)'},200).slideUp(400, 'easeInBack');
   });
-});
-
-// Animated logo
-$(window).on("load resize scroll", function(e) {
-  if ($(window).width() > 1248) {
-    var scrollDist = $(window).scrollTop(),
-      brandBar = $('#brandBar').height(),
-      lightHeight = $('#header').outerHeight() - brandBar - 30,
-      darkHeight = $('#header').outerHeight() + brandBar - 30,
-      logoLight = $('#logo-light'),
-      logoDark = $('#logo-dark');
-    if (scrollDist > lightHeight) {
-      logoLight.addClass('top');
-      setTimeout(function() {
-        logoLight.remove();
-      }, 200);
-    }
-    if (scrollDist > darkHeight) {
-      logoDark.removeClass('left');
-    }
-  }
 });
