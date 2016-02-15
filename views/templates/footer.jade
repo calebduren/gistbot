@@ -1,13 +1,15 @@
 #footer.footer
   .text-center
     p.footer-text
-      | Gistbot © 2015.
+      | &copy; Gistbot 2015 –  
+      script.
+        document.write(new Date().getFullYear())
+      |. All Rights&nbsp;Reserved. 
       unless templateName == 'privacyPolicy'
         a.footer-link(href='/privacy-policy')
-          | Privacy
-          | Policy.
-      br.xs
-      a#email.footer-link(href='javascript:void(0)', onclick='revealEmail()') Contact or Leave a Suggestion.
+          | Privacy&nbsp;Policy.
+      a#email.footer-link(href='javascript:void(0)', onclick='revealEmail()') 
+        | Contact or Leave a&nbsp;Suggestion.
   button#close.close(aria-hidden='true') &times;
     script
       include js/plugins.js

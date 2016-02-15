@@ -1,8 +1,10 @@
 .header {
-  background-color: $gistbot-blue;
+  position: relative;
   width: 100%;
-  height: 120px;
-  padding: 0;
+  padding-top: 45px;
+  padding-bottom: 46px;
+  background-color: $gistbot-solid;
+  @include gistbot-gradient();
   text-align: center;
 }
 
@@ -10,31 +12,66 @@
   text-align: center;
   margin: 15px auto 40px;
   padding: 0;
-  background-color: $light-gray;
   border-radius: 2px;
 }
 
 .input {
-  min-width: 100px;
-  padding: 0;
-  width: calc(100% - 24px;
-  max-width: 100%;
-  vertical-align: bottom;
-  border-radius: 2px;
-  color: $gray;
-  box-shadow: inset 0px 4px 10px rgba(20,20,60,0.05);
-  padding: 10px;
-  border: 1px solid $gray;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 100%;
+  min-width: 200px;
+  height: 80px;
+  background-color: transparentize(lighten($gradient-one, 33%), .8);
+  border-radius: 40px;
+  color: #fff;
+  border: 4px solid transparentize(lighten($gradient-one, 33%), .8);
+  box-shadow:
+    inset 0 0 0 4px transparentize($gray, .5),
+    0 2px 20px transparentize(#222,.8);
   margin: 5px auto 20px;
-  letter-spacing: -.01em;
-  font-size: 1.2em;
-  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden !important; // Scrolls if this isn't important
+  text-overflow: ellipsis;
   transition: background 100ms, box-shadow 500ms;
+
+  @include respond-to(handhelds) {
+    font-size: 16px;
+  }
+
+  @include respond-to(medium-screens) {
+    font-size: 18px;
+  }
+
+  @include respond-to(wide-screens) {
+    font-size: 18px;
+  }
 
   &:focus {
     outline: none;
-    color: #555555;
-    box-shadow: 0px 1px 8px 1px rgba(20,20,60,0.1);
+    box-shadow: inset 0 0 0 4px $gistbot;
     transition: background 250ms, box-shadow 100ms;
+  }
+}
+
+.logo {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  line-height: 0;
+}
+
+.svg-logo {
+  height: 36px;
+  width: 36px;
+  path {
+    fill: #fff;
+    transition: fill 200ms ease-out;
+  }
+
+  &:hover {
+    path {
+      fill: $gistbot;
+      transition: fill 100ms ease-in;
+    }
   }
 }

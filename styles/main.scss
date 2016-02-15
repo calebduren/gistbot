@@ -1,71 +1,17 @@
 // Variables
-@import '_normalize.scss';
 @import '_vars.scss';
+@import '_normalize.scss';
 @import '_header.scss';
 @import '_gists.scss';
 @import '_footer.scss';
 
-html {
-  color: #333;
-  font-size: 1em;
-  line-height: 1.4;
-  font-family: $fonts;
-}
-
-a {
-  text-decoration: none;
-}
-
-body {
-  font-family: $fonts;
-  padding: 0 0 36px;
-}
-
-p {
-  margin: 0 auto 1em;
-  line-height: 1.6;
-}
-
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-::-webkit-input-placeholder {
-  color: $gray;
-  font-weight: 300;
-}
-
-:-moz-placeholder {
-  /* Firefox 18- */
-  color: $gray;
-  font-weight: 300;
-}
-
-::-moz-placeholder {
-  /* Firefox 19+ */
-  color: $gray;
-  font-weight: 300;
-}
-
-:-ms-input-placeholder {
-  color: $gray;
-  font-weight: 300;
-}
-
 h2 {
-  font-size: 2em;
-  font-size: calc(5.65vw - 2px);
+  font-size: 36px;
+  margin-bottom: 15px;
   color: #FFFFFF;
-  font-weight: 300;
+  font-weight: 600;
   text-align: center;
   letter-spacing: -0.01em;
-  line-height: 1;
 }
 
 h3 {
@@ -88,4 +34,8 @@ h5 {
   font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.1;
+}
+
+.container {
+  @include container();
 }

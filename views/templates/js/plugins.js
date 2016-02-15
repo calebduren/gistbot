@@ -64,7 +64,7 @@ var gistUrlComplete = function (data) {
 
   var inner = '';
    for(i=0; i < summaries.length; i++) {
-        inner += '<li class="summ">'+summaries[i]+'</li>';
+        inner += '<li class="summary">'+summaries[i]+'</li>';
    }
 
   gist.id('gist').innerHTML = '';
