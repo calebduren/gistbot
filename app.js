@@ -17,9 +17,6 @@ app.set('port', (process.env.PORT || 5000));
 
 if (!prod) {
   app.set('port', 3000);
-
-  var lessMiddleware = require('less-middleware');
-  app.use(lessMiddleware(path.join(__dirname, 'public')));
 }
 
 app.set('views', path.join(__dirname, 'views'));

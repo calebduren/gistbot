@@ -17,7 +17,7 @@ $(document).ready( function() {
   // Focus the gist input if not a mobile device
   if ( jQuery.browser.mobile !== true ) {
     setTimeout(function () {
-      gist.id('getGist').focus();
+      gist.id('get').focus();
     }, 750);
   } else {
     welcome.remove();

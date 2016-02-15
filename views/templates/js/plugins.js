@@ -5,7 +5,7 @@ var gist = {
 };
 
 var getGist = function (e) {
-  var term = gist.id('getGist').value;
+  var term = gist.id('get').value;
   var queryUrl, jqXhr;
   var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
 
@@ -46,7 +46,7 @@ var getGist = function (e) {
 
 };
 
-gist.id('getGist').onkeyup = function (e) {
+gist.id('get').onkeyup = function (e) {
   if (!e.keyCode.toString().match(/^(37|38|39|40|13|16|17|18|224)$/)) {
     getGist(e);
   }
@@ -67,8 +67,8 @@ var gistUrlComplete = function (data) {
         inner += '<li class="summ">'+summaries[i]+'</li>';
    }
 
-  gist.id('theGist').innerHTML = '';
-  gist.id('theGist').innerHTML += '<div class="oneGist">' +
+  gist.id('gist').innerHTML = '';
+  gist.id('gist').innerHTML += '<div class="oneGist">' +
     '<p class="gistTitle">From ' + hostname + '</p>' +
     // '<p class="gistBody">' + summaries.join(" ").replace(/["']/g, "") + '</p>' +
     '<ul class="gistBody">' +
@@ -81,10 +81,10 @@ var gistUrlComplete = function (data) {
 };
 
 var gistComplete = function (data) {
-  gist.id('theGist').innerHTML = '';
+  gist.id('gist').innerHTML = '';
   for (var i = 0; i < 15; i++) {
     if (data[1][i]) {
-      gist.id('theGist').innerHTML += '<div class="oneGist">' +
+      gist.id('gist').innerHTML += '<div class="oneGist">' +
         '<p class="gistTitle">' + data[1][i] + '</p>' +
         '<p class="gistBody">' + data[2][i] + '</p>' +
         '<p class="nofloat">' +

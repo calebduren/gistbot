@@ -23,16 +23,22 @@ module.exports = function (grunt) {
       ],
       client: [
         'public/javascripts/**/*.js',
-        '!public/javascripts/build*.js',
-        '!public/javascripts/lib/**/*.js'
+        '!public/views/templates/js/*.js',
       ],
       server: expressReloadWatchFiles
     },
 
     //Live-reloading
     watch: {
+      sass: {
+        files: ['styles/**/*.scss'],
+        tasks: ['sass:dist'],
+        options: {
+          livereload: true
+        }
+      },
       css: {
-        files: ['public/css/**/*.less'],
+        files: ['public/css/main.css'],
         options: {
           livereload: true
         }
@@ -58,12 +64,24 @@ module.exports = function (grunt) {
           spawn: false
         }
       }
+    },
+    sass: {
+      options: {
+        sourceMap: true,
+        outputStyle: 'compressed'
+      },
+      dist: {
+        files: {
+          'public/css/main.css': 'styles/main.scss'
+        }
+      }
     }
   });
 
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-express-server');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-
+  grunt.registerTask('default', ['sass:dist', 'watch']);
   grunt.registerTask('up', ['express:dev', 'watch']);
 };
