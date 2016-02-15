@@ -52,9 +52,9 @@ gist.id('get').onkeyup = function (e) {
   }
 };
 
-$("#gist.gistButton").click(function (e) {
-  getGist(e);
-});
+// $("#gist.gistButton").click(function (e) {
+//   getGist(e);
+// });
 
 
 var gistUrlComplete = function (data) {
@@ -64,31 +64,31 @@ var gistUrlComplete = function (data) {
 
   var inner = '';
    for(i=0; i < summaries.length; i++) {
-        inner += '<li class="summary">'+summaries[i]+'</li>';
+        inner += '<li>'+summaries[i]+'</li>';
    }
 
   gist.id('gist').innerHTML = '';
-  gist.id('gist').innerHTML += '<div class="oneGist">' +
-    '<p class="gistTitle">From ' + hostname + '</p>' +
-    // '<p class="gistBody">' + summaries.join(" ").replace(/["']/g, "") + '</p>' +
-    '<ul class="gistBody">' +
+  gist.id('gist').innerHTML += '<div class="a-gist">' +
+    '<p class="gist-title">From ' + hostname + '</p>' +
+    '<ul class="gist-body">' +
       inner +
     '</ul>' +
-    '<p class="nofloat">' +
-    '<a class="gistLink" href="' + url + '"' + 'target="_blank">View to the full article at ' + hostname + '</a>' +
+    '<p class="right">' +
+    '<a class="gist-link" href="' + url + '"' + 'target="_blank">View the full article at ' + hostname + '</a>' +
     '</p>' +
     '</div>';
 };
 
 var gistComplete = function (data) {
   gist.id('gist').innerHTML = '';
+  var string = 'may refer to:';
   for (var i = 0; i < 15; i++) {
-    if (data[1][i]) {
-      gist.id('gist').innerHTML += '<div class="oneGist">' +
-        '<p class="gistTitle">' + data[1][i] + '</p>' +
-        '<p class="gistBody">' + data[2][i] + '</p>' +
-        '<p class="nofloat">' +
-        '<a class="gistLink" href="http://en.wikipedia.org/wiki/' + data[1][i] + '"' + 'target="_blank">Read more at www.wikipedia.org</a>' +
+    if (data[1][i] && data[2][i] && data[2][i].indexOf(string) == -1 ) {
+      gist.id('gist').innerHTML += '<div class="a-gist">' +
+        '<p class="gist-title">' + data[1][i] + '</p>' +
+        '<p class="gist-body">' + data[2][i] + '</p>' +
+        '<p class="right">' +
+        '<a class="gist-link" href="http://en.wikipedia.org/wiki/' + data[1][i] + '"' + 'target="_blank">Read more at wikipedia.org</a>' +
         '</p>' +
         '</div>';
     }
