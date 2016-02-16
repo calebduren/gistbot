@@ -1,14 +1,38 @@
 .header {
-  position: relative;
   width: 100%;
-  padding-top: 60px;
-  padding-bottom: 60px;
   background-color: $gistbot;
   background-image: url(/img/bg.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
+
+  @include respond-to(handhelds) {
+    padding-top: 30px;
+    padding-bottom: 75px;
+  }
+
+  @include respond-to(medium-screens) {
+    padding-top: 60px;
+    padding-bottom: 75px;
+  }
+
+  @include respond-to(wide-screens) {
+    padding-top: 60px;
+    padding-bottom: 75px;
+  }
+}
+
+.absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
 }
 
 @-moz-document url-prefix() {
@@ -33,28 +57,26 @@
   }
 }
 
-
-.form {
-  text-align: center;
-  margin: 15px auto 40px;
-  padding: 0;
-  border-radius: 2px;
+.input-container {
+  position: relative;
+  margin-top: 15px;
 }
 
 .input {
   padding-left: 30px;
-  padding-right: 30px;
+  padding-right: 75px;
   width: 100%;
   min-width: 200px;
   height: 80px;
-  background-color: transparentize(lighten($gradient-one, 20%), .9);
+  background-color: transparentize(black, .9);
   border-radius: 40px;
   color: #fff;
-  border: 4px solid transparentize(lighten($gradient-one, 20%), .9);
+  border: 6px solid transparentize($secondary, .9);
   box-shadow:
-    inset 0 0 0 4px transparentize($gray, .5),
+    inset 0 0 0 3px transparentize(#fff, .5),
     0 2px 10px transparentize(#222, .9);
   white-space: nowrap;
+  letter-spacing: 0.025em;
   overflow: hidden !important; // Scrolls if this isn't important
   text-overflow: ellipsis;
   transition: all 200ms ease-out;
@@ -68,16 +90,43 @@
   }
 
   @include respond-to(wide-screens) {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   &:focus {
+    background-color: transparent;
     outline: none;
     box-shadow:
-      inset 0 0 0 4px $gistbot,
-      0 4px 20px 8px transparentize(#222, .8);
+      inset 0 0 0 3px $gistbot,
+      0 6px 20px 6px transparentize(#222, .8);
     transition: all 200ms ease-in;
+
+    + .svg-search {
+      path {
+        fill: $gistbot;
+      }
+    }
   }
+}
+
+@mixin placeholder() {
+  color: transparentize(#fff, .5);
+}
+
+::-webkit-input-placeholder {
+  @include placeholder();
+}
+
+:-moz-placeholder {
+  @include placeholder();
+}
+
+::-moz-placeholder {
+  @include placeholder();
+}
+
+:-ms-input-placeholder {
+  @include placeholder();
 }
 
 .logo {
@@ -85,7 +134,6 @@
   bottom: 10px;
   left: 10px;
   line-height: 0;
-  cursor: none;
 }
 
 .svg-logo {
@@ -101,5 +149,19 @@
       fill: $gistbot;
       transition: fill 100ms ease-in;
     }
+  }
+}
+
+.svg-search {
+  position: absolute;
+  right: 30px;
+  height: 30px;
+  width: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  path {
+    fill: transparentize(white, .5);
+    transition: fill 200ms ease-out;
   }
 }

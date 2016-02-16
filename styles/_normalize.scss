@@ -167,25 +167,3 @@ input[type="search"]::-webkit-search-decoration {
   background: #b3d4fc;
   text-shadow: none;
 }
-
-::-webkit-input-placeholder {
-  color: transparentize(#fff, .5);
-  font-weight: 300;
-}
-
-:-moz-placeholder {
-  /* Firefox 18- */
-  color: transparentize(#fff, .5);
-  font-weight: 300;
-}
-
-::-moz-placeholder {
-  /* Firefox 19+ */
-  color: transparentize(#fff, .5);
-  font-weight: 300;
-}
-
-:-ms-input-placeholder {
-  color: transparentize(#fff, .5);
-  font-weight: 300;
-}

@@ -1,18 +1,7 @@
-$gistbot: #76C18A; // old = #F07864;
-$gistbot-solid: #52dde8;
+$gistbot: #51e1b0; // #F07864;
 $light-gray: #E4E4E4;
 $gray: #9A9898;
-$gradient-one: #0C4D6D;
-$gradient-two: #3C2851;
-$gradient-degree: 32deg;
-
-@mixin gistbot-gradient() {
-  background: -moz-linear-gradient($gradient-degree, $gradient-one 0%, $gradient-two 100%);
-  background: -webkit-linear-gradient($gradient-degree, $gradient-one 0%, $gradient-two 100%);
-  background: -o-linear-gradient($gradient-degree, $gradient-one 0%, $gradient-two 100%);
-  background: -ms-linear-gradient($gradient-degree, $gradient-one 0%, $gradient-two 100%);
-  background: linear-gradient(90 - $gradient-degree, $gradient-one 0%, $gradient-two 100%);
-}
+$secondary: #6bcaa5;
 
 $fonts: Helvetica Neue, Helvetica, sans-serif;
 
@@ -36,8 +25,8 @@ $break-large: 1400px;
   margin-left: auto;
   margin-right: auto;
   max-width: 100%;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
 
   @include respond-to(handhelds) {
     width: 100%;
