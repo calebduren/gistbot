@@ -20,12 +20,18 @@ if (!prod) {
 }
 
 app.set('views', path.join(__dirname, 'views'));
-app.engine('jade', require('jade').__express);
+app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 
 require('./routes/pages')(app);
 require('./routes/services')(app);
+
+app.get('/', function ( req, res ) {
+  res.render('index', {
+    livereload: app.get('port') == 3000
+  });
+});
 
 http.createServer(app).listen(app.get('port'), function () {
   console.log('Express server listening on port ' + app.get('port'));
