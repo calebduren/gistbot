@@ -26,6 +26,6 @@
     "karma": "^0.12.14",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-uglify": "^1.0.1",
-    "grunt-sass": "^0.16.1",
+    "grunt-sass": "^0.16.1"
   }
 }
