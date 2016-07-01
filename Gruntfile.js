@@ -32,7 +32,7 @@ module.exports = function(grunt) {
         separator: ';',
       },
       dist: {
-        src: ['views/templates/js/jquery-2.1.3.min.js', 'views/templates/js/plugins.js', 'views/templates/js/main.js'],
+        src: ['views/templates/js/jquery-2.1.3.min.js', 'views/templates/js/plugins.js', 'views/templates/js/v2.js'],
         dest: 'views/templates/js/concat.js'
       }
     },
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
       },
       my_target: {
         files: {
-          'views/templates/js/main.min.js': ['views/templates/js/concat.js']
+          'views/templates/js/v2.min.js': ['views/templates/js/concat.js']
         }
       }
     },
