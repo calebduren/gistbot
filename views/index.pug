@@ -1,8 +1,8 @@
-- var title= 'Gistbot Home'
-- var description = 'Welcome to Gistbot, a productivity app to quickly get the main ideas behind an article or topic'
+- var pageTitle= 'Gistbot Home'
+- var pageDescription = 'Gistbot is a productivity app to quickly get the main ideas behind an article or topic'
 - var templateName = 'home'
 
-include templates/head.jade
+include templates/head.pug
   body
     #header.header.absolute
       .container
@@ -12,9 +12,8 @@ include templates/head.jade
         .input-container
           input#get.input(type='text', name='Gistbot', placeholder='i.e. Nikola Tesla or http://arstechnica.com/business/2016/02/twitters-monthly-active-user-base-shrunk-in-q4/')
           include templates/svg/search.svg
-      include templates/logo.jade
+      include templates/logo.pug
     .container
       .row
         #gist.gists
-    include templates/footer.jade
-    
+    include templates/footer.pug

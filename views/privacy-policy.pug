@@ -1,10 +1,10 @@
-- var title= 'Privacy Policy | Gistbot'
+- var pageTitle= 'Privacy Policy | Gistbot'
 - var description = 'Gistbot Privacy Policy'
 - var templateName = 'privacyPolicy'
 
-include templates/head.jade
+include templates/head.pug
   body
-    include templates/header.jade
+    include templates/header.pug
     .container
       .row.privacy
         p This Privacy Policy governs the manner in which Gistbot collects, uses, maintains and discloses information collected from users (each, a "User") of the gistbot.com website ("Site"). This privacy policy applies to the Site and all products and services offered by Gistbot.
@@ -28,7 +28,7 @@ include templates/head.jade
           li
             To improve our Site. We may use feedback you provide to improve our products and services.
         h4 How we protect your information
-        p. 
+        p.
           We adopt appropriate data collection, storage and processing practices and security measures to protect against unauthorized access, alteration, disclosure or destruction of your personal information, username, password, transaction information and data stored on our Site.
         h4 Sharing your personal information
         p.
@@ -47,4 +47,4 @@ include templates/head.jade
           If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us at help@gistbot.com.
         p.
           This document was last updated on February 15, 2016
-    include templates/footer.jade
+    include templates/footer.pug

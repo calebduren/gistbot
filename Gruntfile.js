@@ -68,7 +68,7 @@ module.exports = function(grunt) {
         }
       },
       jade: {
-        files: ['views/**/*.jade'],
+        files: ['views/**/*.pug'],
         options: {
           livereload: true
         }
