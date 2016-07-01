@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://calebduren@bitbucket.org/calebduren/gistbot.git"
+    "url": "https://calebduren@github/calebduren/gistbot.git"
   },
   "devDependencies": {
     "grunt": "^0.4.4",
