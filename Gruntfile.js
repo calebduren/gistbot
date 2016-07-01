@@ -1,16 +1,33 @@
+var expressReloadWatchFiles = [
+  'app.js',
+  'routes/**/*.js'
+];
+
 module.exports = function(grunt) {
-  pkg: grunt.file.readJSON('package.json'),
   grunt.initConfig({
+
     express: {
       dev: {
         options: {
-          script: 'index.js',
+          script: 'app.js',
           debug: true,
           background: true
         }
       }
     },
 
+    jshint: {
+      options: {},
+      grunt: [
+        'Gruntfile.js'
+      ],
+      client: [
+        'public/javascripts/**/*.js',
+        '!public/javascripts/build*.js',
+        '!public/javascripts/lib/**/*.js'
+      ],
+      server: expressReloadWatchFiles
+    },
     sass: {
       options: {
         sourceMap: true,
@@ -40,12 +57,54 @@ module.exports = function(grunt) {
           'views/templates/js/v2.min.js': ['views/templates/js/concat.js']
         }
       }
+    },
+
+    //Live-reloading
+    watch: {
+      css: {
+        files: ['view/styles/**/*.less'],
+        options: {
+          livereload: true
+        }
+      },
+      jade: {
+        files: ['views/**/*.jade'],
+        options: {
+          livereload: true
+        }
+      },
+      js: {
+        files: ['views/templates/js/**/*.js'],
+        tasks: ['jshint:client'],
+        options: {
+          livereload: true,
+          interrupt: false
+        }
+      },
+      configFiles: {
+        files: ['Gruntfile.js'],
+        tasks: ['jshint:grunt'],
+        options: {
+          reload: true
+        }
+      },
+      express: {
+        files: expressReloadWatchFiles,
+        tasks: ['jshint:server', 'express:dev'],
+        options: {
+          livereload: true,
+          spawn: false
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-express-server');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-express-server');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.registerTask('default', ['sass', 'concat', 'uglify']);
+  grunt.registerTask('up', ['express:dev', 'watch']);
 };
