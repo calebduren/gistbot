@@ -13,20 +13,20 @@ var path = require('path');
 
 var app = express();
 
+app.set('port', (process.env.PORT || 5000));
+
 if (!prod) {
   app.set('port', 3000);
 }
 
-app.set('views','views');
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-app.use(express.static('public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 
-app.get('/', function(req, res) {
-  require('./routes/pages')(app);
-  require('./routes/services')(app);
-});
+require('./routes/pages')(app);
+require('./routes/services')(app);
 
-http.createServer(app).listen(app.get('port'), function() {
+http.createServer(app).listen(app.get('port'), function () {
   console.log('Express server listening on port ' + app.get('port'));
 });
