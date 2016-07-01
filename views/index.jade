@@ -1,73 +1,21 @@
-doctype html
-html.no-js(lang='')
-  head
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-    title Gistbot
-    meta(name='description', content='Get a summary of a topic or article in a jiffy with Gistbot')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='apple-touch-icon-precomposed', sizes='57x57', href='/img/apple-touch-icon-57x57.png')
-    link(rel='apple-touch-icon-precomposed', sizes='114x114', href='/img/apple-touch-icon-114x114.png')
-    link(rel='apple-touch-icon-precomposed', sizes='72x72', href='/img/apple-touch-icon-72x72.png')
-    link(rel='apple-touch-icon-precomposed', sizes='144x144', href='/img/apple-touch-icon-144x144.png')
-    link(rel='apple-touch-icon-precomposed', sizes='120x120', href='/img/apple-touch-icon-120x120.png')
-    link(rel='apple-touch-icon-precomposed', sizes='152x152', href='/img/apple-touch-icon-152x152.png')
-    link(rel='icon', type='image/png', href='/img/favicon-32x32.png', sizes='32x32')
-    link(rel='icon', type='image/png', href='/img/favicon-16x16.png', sizes='16x16')
-    meta(name='application-name', content='Gistbot')
-    meta(name='msapplication-TileColor', content='#FFFFFF')
-    meta(name='msapplication-TileImage', content='/img/mstile-144x144.png')
-    link(rel='stylesheet', href='css/normalize.css')
-    link(rel='stylesheet', href='css/main.css')
-    if(locals.livereload)
-      script(src='//localhost:35729/livereload.js')
-    script(type='text/javascript', src='js/vendor/jquery-2.1.3.min.js')
-    <!--[if lte IE 11]>
-    link(rel='stylesheet', href='css/ie.css')
-    <![endif]-->
-    <!--[if lt IE 9]>
-    script(src='//html5shiv.googlecode.com/svn/trunk/html5.js')
-    script.
-      window.html5 || document.write('<script src='js/vendor/html5shiv.js'><\\/script>')
-    <![endif]-->
+- var title= 'Gistbot Home'
+- var description = 'Welcome to Gistbot, a productivity app to quickly get the main ideas behind an article or topic'
+- var templateName = 'home'
+
+include templates/head.jade
   body
-    .brand-border
-    #brandBar.brand
-      .brand-container
-        .logo-container
-          h1#logo-light.logo-light Gistbot
-            span.version.version-dark-bg ALPHA
-          h1#logo-dark.logo-dark.left Gistbot
-            span.version.version-light-bg ALPHA
-    #header.header
-      .intro-container
-        .welcome-container
-          #welcome.welcome
-            h3.welcome-heading
-              span.hidden-sm Welcome to Gistbot!&nbsp;
-              | This site can summarize articles or&nbsp;
-              span.nw briefly describe just about any topic
-              span.hidden-sm .
-              button#close-top.close-top(aria-hidden='true') &times;
-        h2#intro.intro-text
+    #header.header.absolute
+      .container
+        h2.intro
           | Paste a link or type anything&nbsp;
-          span.nw to get the gist
+          span.nw to get the&nbsp;gist
+        .input-container
+          input#get.input(type='text', name='Gistbot', placeholder='i.e. Nikola Tesla or http://arstechnica.com/business/2016/02/twitters-monthly-active-user-base-shrunk-in-q4/')
+          include templates/svg/search.svg
+      include templates/logo.jade
     .container
       .row
-        form#gistInput.form
-          input#getGist.gistInput(type='text', name='Gistbot', placeholder='i.e. Nikola Tesla or http://www.wired.com/2015/02/fcc-chairman-wheeler-net-neutrality/')
-          button#gist.gistButton(type='button', value='checkvalue')
-            | get the gist
-        #theGist.gists
-    #footer.footer
-      .text-center
-        p.footer-text
-          | Gistbot © 2015.
-          a.footer-link(href='../../privacy-policy')
-            | Privacy
-            | Policy.
-          br.xs
-          a#email.footer-link(href='javascript:void(0)', onclick='revealEmail()') Contact or Leave a Suggestion.
-      button#close.close(aria-hidden='true') &times;
-    script(type='text/javascript', src='js/plugins.js')
-    script(type='text/javascript', src='js/main.js')
+        #gist.gists
+    include templates/footer.jade
+    script
+      include templates/js/plugins.js

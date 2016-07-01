@@ -16,14 +16,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://calebduren@bitbucket.org/calebduren/gistbot.git"
+    "url": "https://calebduren@github/calebduren/gistbot.git"
   },
   "devDependencies": {
     "grunt": "^0.4.4",
-    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^0.6.1",
     "grunt-express-server": "^0.4.17",
-    "karma": "^0.12.14",
-    "less-middleware": "^0.2.1-beta"
+    "grunt-sass": "^0.16.1",
+    "karma": "^0.12.14"
   }
 }

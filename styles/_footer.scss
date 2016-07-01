@@ -1,0 +1,89 @@
+
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  margin-top: 15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: $light-gray;
+  text-align: center;
+}
+
+.footer-text {
+  color: $gray;
+  text-align: center;
+  font-size: 75%;
+  word-spacing: -0.05em;
+}
+
+.footer-link {
+  color: $gray;
+  text-decoration: none;
+
+  &:hover {
+    color: $gistbot;
+    text-shadow: none;
+    text-decoration: none;
+  }
+}
+
+.close-top {
+  padding: 2px;
+  color: #FFFFFF;
+  font-size: 75%;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  transform: translate(5px, -10px);
+
+  &:hover {
+    color: $gistbot;
+    text-shadow: 0 1px 5px rgba(20,20,60,0.1);
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+  }
+
+  &:focus, &:active {
+    color: $gistbot;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+  }
+}
+
+.close {
+  position: absolute;
+  color: $gray;
+  right: 10px;
+  bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-size: 120%;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+
+  &:hover {
+    color: $gistbot;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+  }
+
+  &:focus, &:active {
+    color: $gistbot;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: transparent;
+  }
+}
+
+.privacy {
+  padding: 30px;
+}
