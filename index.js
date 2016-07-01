@@ -27,10 +27,6 @@ app.use(bodyParser.json());
 require('./routes/pages')(app);
 require('./routes/services')(app);
 
-app.get('/', function(request, response) {
-  response.render('index');
-});
-
 http.createServer(app).listen(app.get('port'), function () {
   console.log('Express server listening on port ' + app.get('port'));
 });
