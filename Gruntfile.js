@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     express: {
       dev: {
         options: {
-          script: 'app.js',
+          script: 'index.js',
           debug: true,
           background: true
         }
