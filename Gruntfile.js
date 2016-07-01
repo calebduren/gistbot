@@ -1,11 +1,6 @@
-var expressReloadWatchFiles = [
-  'app.js',
-  'routes/*.js'
-];
-
 module.exports = function(grunt) {
+  pkg: grunt.file.readJSON('package.json'),
   grunt.initConfig({
-
     express: {
       dev: {
         options: {
@@ -23,7 +18,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'public/css/main.css': 'styles/main.scss'
+          'public/css/main.css': 'view/styles/main.scss'
         }
       }
     },
@@ -45,44 +40,12 @@ module.exports = function(grunt) {
           'views/templates/js/v2.min.js': ['views/templates/js/concat.js']
         }
       }
-    },
-    watch: {
-      sass: {
-        files: ['styles/**/*.scss'],
-        tasks: ['sass:dist'],
-        options: {
-          livereload: true
-        }
-      },
-      jade: {
-        files: ['views/**/*.jade'],
-        options: {
-          livereload: true
-        }
-      },
-      configFiles: {
-        files: ['Gruntfile.js'],
-        tasks: ['jshint:grunt'],
-        options: {
-          reload: true
-        }
-      },
-      express: {
-        files: expressReloadWatchFiles,
-        tasks: ['jshint:server', 'express:dev'],
-        options: {
-          livereload: true,
-          spawn: false
-        }
-      }
     }
   });
 
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-express-server');
-  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.registerTask('default', ['sass:dist', 'watch']);
-  grunt.registerTask('up', ['express:dev', 'watch']);
+  grunt.registerTask('default', ['sass', 'concat', 'uglify']);
 };
