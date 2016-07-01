@@ -1,6 +1,6 @@
 var expressReloadWatchFiles = [
   'app.js',
-  'routes/**/*.js'
+  'routes/*.js'
 ];
 
 module.exports = function(grunt) {
@@ -14,19 +14,6 @@ module.exports = function(grunt) {
           background: true
         }
       }
-    },
-
-    jshint: {
-      options: {},
-      grunt: [
-        'Gruntfile.js'
-      ],
-      client: [
-        'public/javascripts/**/*.js',
-        '!public/javascripts/build*.js',
-        '!public/javascripts/lib/**/*.js'
-      ],
-      server: expressReloadWatchFiles
     },
 
     sass: {
@@ -94,7 +81,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-express-server');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.registerTask('default', ['sass:dist', 'watch']);
