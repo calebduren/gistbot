@@ -32,7 +32,7 @@ module.exports = function(grunt) {
         separator: ';',
       },
       dist: {
-        src: ['views/templates/js/html5shiv.js', 'views/templates/js/jquery-2.1.3.min.js', 'views/templates/js/plugins.js', 'views/templates/js/main.js'],
+        src: ['views/templates/js/jquery-2.1.3.min.js', 'views/templates/js/plugins.js', 'views/templates/js/main.js'],
         dest: 'views/templates/js/concat.js'
       }
     },
