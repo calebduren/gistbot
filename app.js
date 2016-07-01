@@ -8,7 +8,7 @@ if (!process.env.PORT) {
 
 var express = require('express');
 var bodyParser = require('body-parser');
-var http = require('http');
+var http = require('https');
 var path = require('path');
 
 var app = express();
@@ -30,6 +30,18 @@ app.use(bodyParser.json());
 require('./routes/pages')(app);
 require('./routes/services')(app);
 
-http.createServer(app).listen(app.get('port'), function () {
+// SSL
+var https = require('https');
+var fs = require('fs');
+
+var sslkey = fs.readFileSync('ssl-key.pem');
+var sslcert = fs.readFileSync('ssl-cert.pem')
+
+var options = {
+  key: sslkey,
+  cert: sslcert
+};
+
+https.createServer(options, app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
 });
