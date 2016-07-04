@@ -52,8 +52,6 @@ var getGist = function (e) {
       console.log("Fetched gist from Wikipedia for term:", term);
     });
   }
-
-
 };
 
 gist.id('get').onkeyup = function (e) {
@@ -61,11 +59,6 @@ gist.id('get').onkeyup = function (e) {
     getGist(e);
   }
 };
-
-// $("#gist.gistButton").click(function (e) {
-//   getGist(e);
-// });
-
 
 var gistUrlComplete = function (data) {
   var summaries = data.summaries || [];

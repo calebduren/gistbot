@@ -6,6 +6,7 @@
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
+  display: flex;
 
   @include respond-to(handhelds) {
     padding-top: 30px;
@@ -111,6 +112,7 @@
 
 @mixin placeholder() {
   color: transparentize(#fff, .5);
+  font-weight: 400;
 }
 
 ::-webkit-input-placeholder {

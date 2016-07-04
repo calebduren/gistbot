@@ -2,8 +2,15 @@ var expressReloadWatchFiles = [
   'app.js',
   'routes/**/*.js'
 ];
-
+var Promise = require('es6-promise').Promise;
 module.exports = function(grunt) {
+  grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-postcss');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-express-server');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.initConfig({
 
     express: {
@@ -23,38 +30,51 @@ module.exports = function(grunt) {
       ],
       client: [
         'public/javascripts/**/*.js',
-        '!public/javascripts/build*.js',
-        '!public/javascripts/lib/**/*.js'
+        '!public/js/*.js'
       ],
       server: expressReloadWatchFiles
     },
     sass: {
       options: {
         sourceMap: true,
-        outputStyle: 'compressed'
+        livereload: true
       },
       dist: {
         files: {
-          'public/css/main.css': 'view/styles/main.scss'
+          'public/css/main.css': 'views/styles/main.scss'
         }
+      }
+    },
+    postcss: {
+      options: {
+        map: true,
+        processors: [
+          require('autoprefixer')({browsers: '> 5%, last 2 versions, Firefox > 20'}), // add vendor prefixes
+          require('cssnano')() // minify the result
+        ],
+        livereload: true
+      },
+      dist: {
+        src: 'public/css/*.css'
       }
     },
     concat: {
       options: {
         separator: ';',
+        livereload: true
       },
       dist: {
-        src: ['views/templates/js/jquery-2.1.3.min.js', 'views/templates/js/plugins.js', 'views/templates/js/v2.js'],
+        src: ['views/templates/js/jquery-2.1.3.min.js', 'views/templates/js/plugins.js', 'views/templates/js/page.js'],
         dest: 'views/templates/js/concat.js'
       }
     },
     uglify: {
       options: {
-        mangle: false
+        livereload: true,
       },
       my_target: {
         files: {
-          'views/templates/js/v2.min.js': ['views/templates/js/concat.js']
+          'public/js/v2.1.min.js': ['views/templates/js/concat.js']
         }
       }
     },
@@ -62,12 +82,12 @@ module.exports = function(grunt) {
     //Live-reloading
     watch: {
       css: {
-        files: ['view/styles/**/*.less'],
+        files: ['view/styles/**/*.scss'],
         options: {
           livereload: true
         }
       },
-      jade: {
+      pug: {
         files: ['views/**/*.pug'],
         options: {
           livereload: true
@@ -83,14 +103,14 @@ module.exports = function(grunt) {
       },
       configFiles: {
         files: ['Gruntfile.js'],
-        tasks: ['jshint:grunt'],
+        tasks: ['sass', 'postcss:dist', 'concat', 'uglify'],
         options: {
           reload: true
         }
       },
       express: {
         files: expressReloadWatchFiles,
-        tasks: ['jshint:server', 'express:dev'],
+        tasks: ['express:dev'],
         options: {
           livereload: true,
           spawn: false
@@ -99,12 +119,5 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-express-server');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.registerTask('default', ['sass', 'concat', 'uglify']);
-  grunt.registerTask('up', ['express:dev', 'watch']);
+  grunt.registerTask('default', ['express:dev', 'sass', 'postcss:dist', 'concat', 'uglify', 'watch']);
 };

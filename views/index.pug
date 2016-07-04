@@ -1,4 +1,4 @@
-- var pageTitle= 'Gistbot Home'
+- var metaTitle= 'Gistbot Home'
 - var pageDescription = 'Gistbot is a productivity app to quickly get the main ideas behind an article or topic'
 - var templateName = 'home'
 
@@ -7,11 +7,11 @@ body
   #header.header.absolute
     .container
       h2.intro
-        | Paste a link or type anything&nbsp;
-        span.nw to get the&nbsp;gist
+        | Paste a link to get the&nbsp;gist
       .input-container
-        input#get.input(type='text', name='Gistbot', placeholder='i.e. Nikola Tesla or http://arstechnica.com/business/2016/02/twitters-monthly-active-user-base-shrunk-in-q4/')
+        input#get.input(type='text', name='Gistbot', placeholder='i.e. http://arstechnica.com/business/2016/02/twitters-monthly-active-user-base-shrunk-in-q4/')
         include templates/svg/search.svg
+      .sub You can also try typing anything to get the Gist 
     include templates/logo.pug
   .container
     .row

@@ -4,12 +4,11 @@
       | &copy; Gistbot 2015 –
       script.
         document.write(new Date().getFullYear())
-      |. All Rights&nbsp;Reserved.
+      |.&ensp;All Rights&nbsp;Reserved.
       unless templateName == 'privacyPolicy'
         a.footer-link(href='/privacy-policy')
-          | Privacy&nbsp;Policy.
-      a#email.footer-link(href='javascript:void(0)', onclick='revealEmail()')
-        | Contact or Leave a&nbsp;Suggestion.
+          |&ensp;Privacy&nbsp;Policy.
+      a#email.footer-link
+        |&ensp;Contact or Leave a&nbsp;Suggestion.
   button#close.close(aria-hidden='true') &times;
-  script
-    include js/v2.min.js
+  script(src='/js/v2.1.min.js')

@@ -1,24 +1,19 @@
-$(document).ready( function() {
 
   // $ Easing plugin below
   $.extend($.easing, {
     easeInBack: function(x, t, b, c, d, s) {
       if (s == undefined) s = 1.70158;
       return c * (t /= d) * t * ((s + 1) * t - s) + b;
-    },
-    easeOutCirc: function(x, t, b, c, d) {
-      return c * Math.sqrt(1 - (t = t / d - 1) * t) + b;
     }
   });
 
-  // Put the email address in footer when "contact us" is clicked
-  function revealEmail() {
+  $('#email').click( function() {
     $("#email").html('&#104;&#105;&#64;&#103;&#105;&#115;&#116;&#98;&#111;&#116;&#46;&#99;&#111;&#109;');
 
     setTimeout(function() {
       $("#email").attr('href', 'mailto:hi@gistbot.com');
     }, 50);
-  }
+  });
 
   // Debouncing scroll stuff
   function debounce(func, wait, immediate) {
@@ -55,13 +50,10 @@ $(document).ready( function() {
   }, 5);
 
   window.addEventListener('scroll', scrollFn);
-});
 
 // Clicking welcome text and footer removes them
-$(window).load( function() {
   var close = $('#close');
   var footer = $('#footer');
   close.click(function() {
     footer.slideUp(250, 'easeInBack');
   });
-});
