@@ -250,7 +250,7 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 /* line 108, /Users/Caleb/dev/gistbot/views/styles/partials/_header.scss */
 .hint {
   font-size: 80%;
-  width: 416px;
+  width: 480px;
   max-width: calc(100% - 72px);
   visibility: hidden;
   opacity: 0;
@@ -552,22 +552,20 @@ li {
   position: absolute;
   color: #9A9898;
   right: 6px;
-  top: 50%;
-  transform: translateY(-50%);
-  line-height: 0;
+  top: 2px;
+  line-height: 1;
   padding-left: 2px;
   padding-right: 2px;
-  font-size: 120%;
   cursor: pointer;
   border: none;
   background-color: transparent; }
-  /* line 76, /Users/Caleb/dev/gistbot/views/styles/partials/_footer.scss */
+  /* line 74, /Users/Caleb/dev/gistbot/views/styles/partials/_footer.scss */
   .close:hover {
     color: #62B994;
     cursor: pointer;
     border: none;
     background-color: transparent; }
-  /* line 84, /Users/Caleb/dev/gistbot/views/styles/partials/_footer.scss */
+  /* line 82, /Users/Caleb/dev/gistbot/views/styles/partials/_footer.scss */
   .close:active, .close:focus {
     color: #62B994;
     cursor: pointer;
