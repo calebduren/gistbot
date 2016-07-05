@@ -17,6 +17,8 @@
   text-align: center;
   font-size: 75%;
   word-spacing: -0.05em;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .footer-link {
@@ -60,11 +62,12 @@
 .close {
   position: absolute;
   color: $gray;
-  right: 10px;
-  top: 0;
-  line-height: 1;
-  padding-left: 4px;
-  padding-right: 4px;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 0;
+  padding-left: 2px;
+  padding-right: 2px;
   font-size: 120%;
   cursor: pointer;
   border: none;
