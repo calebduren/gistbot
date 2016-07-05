@@ -1,4 +1,3 @@
-
 .footer {
   position: fixed;
   left: 0;
@@ -9,6 +8,7 @@
   padding-top: 2px;
   padding-bottom: 2px;
   background-color: $light-gray;
+  border-top: 1px solid #eee;
   text-align: center;
 }
 
@@ -47,7 +47,8 @@
     background-color: transparent;
   }
 
-  &:focus, &:active {
+  &:active,
+  &:focus {
     color: $gistbot;
     border: none;
     outline: none;
@@ -75,15 +76,12 @@
     background-color: transparent;
   }
 
-  &:focus, &:active {
+  &:active,
+  &:focus {
     color: $gistbot;
     cursor: pointer;
     outline: none;
     border: none;
     background-color: transparent;
   }
-}
-
-.privacy {
-  padding: 30px;
 }

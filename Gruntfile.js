@@ -82,7 +82,8 @@ module.exports = function(grunt) {
     //Live-reloading
     watch: {
       css: {
-        files: ['view/styles/**/*.scss'],
+        files: ['views/styles/**/*.scss'],
+        tasks: ['sass'],
         options: {
           livereload: true
         }
