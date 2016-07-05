@@ -37,7 +37,7 @@
   cursor: pointer;
   border: none;
   background-color: transparent;
-  transform: translate(5px, -10px);
+  transform: translateX(5px) translateY(-10px) translateZ(0);
 
   &:hover {
     color: $gistbot;
@@ -61,7 +61,8 @@
   position: absolute;
   color: $gray;
   right: 10px;
-  bottom: 0;
+  top: 0;
+  line-height: 1;
   padding-left: 4px;
   padding-right: 4px;
   font-size: 120%;

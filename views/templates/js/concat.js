@@ -163,25 +163,35 @@ function debounce(func, wait, immediate) {
   };
 };
 
+
 var header = $('#header');
 var row = $('.row');
-var headerHeight = header.outerHeight();
 
-row.css('margin-top', headerHeight - 22);
+var resizeFn = debounce(function() {
+  var headerHeight = header.outerHeight();
+
+  row.css('margin-top', headerHeight - 36);
+}, 20);
 
 var scrollFn = debounce(function() {
-  $(window).scroll(function() {
-    if ($(this).scrollTop() >= headerHeight - 52) {
-      header.addClass('fixed').removeClass('absolute');
-      header.css('top', -headerHeight + 52);
-    } else {
-      header.removeClass('fixed').addClass('absolute');
-      header.css('top', '0');
-    }
-  });
+  var headerHeight = header.outerHeight();
+
+  if ($(this).scrollTop() >= headerHeight - 40) {
+    header.addClass('fixed').removeClass('absolute');
+    header.css('top', -headerHeight + 40);
+  } else {
+    header.removeClass('fixed').addClass('absolute');
+    header.css('top', '0');
+  }
+
 }, 10);
 
 window.addEventListener('scroll', scrollFn);
+window.addEventListener('resize', resizeFn);
+document.addEventListener('DOMContentLoaded', function() {
+    resizeFn();
+}, false);
+
 
 // Clicking welcome text and footer removes them
 var close = $('#close');
