@@ -1,0 +1,14 @@
+#footer.footer
+  .text-center
+    p.footer-text
+      | &copy; Gistbot 2015 –
+      script.
+        document.write(new Date().getFullYear())
+      |.&#32;All Rights&nbsp;Reserved.
+      unless templateName == 'privacyPolicy'
+        a.footer-link(href='/privacy-policy')
+          |&#32;Privacy&nbsp;Policy.&#32;
+      a#email.footer-link
+        |Contact or Leave a&nbsp;Suggestion.
+  button#close.close(aria-hidden='true') &times;
+  script(src='/js/v2.1.min.js')

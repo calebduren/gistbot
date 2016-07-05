@@ -46,7 +46,7 @@ Navigate to that directory.
 
 Install the node dependencies
 
-    npm install #should run for less than one minute
+    npm install #should run for sass than one minute
 
 Check for errors. If none, we’re good. Run the command below and navigate to [http://localhost:3000](http://localhost:3000).
 
@@ -55,3 +55,5 @@ Check for errors. If none, we’re good. Run the command below and navigate to [
 Or if you want to develop with live-reload and JS Linting enabled:
 
     grunt up
+
+Run `grunt` to live reload scss

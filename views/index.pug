@@ -1,0 +1,23 @@
+- var metaTitle= 'Gistbot Home'
+- var pageDescription = 'Gistbot is a productivity app to quickly get the main ideas behind an article or topic'
+- var templateName = 'home'
+
+include templates/head.pug
+body
+  #header.header.absolute
+    .container
+      h2.intro
+        | Paste a link to get the&nbsp;gist
+      .input-container
+        input#get.input(type='url', name='Gistbot', placeholder='https://www.pasteyourlink.com/here')
+        include templates/svg/filter.svg
+    include templates/logo.pug
+  .container
+    .row
+      #gist.gists
+  .loading-container
+    #loading.not
+      .load-one
+      .load-two
+      .load-three
+  include templates/footer.pug
