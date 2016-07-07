@@ -110,8 +110,9 @@ if ($('.input').length) {
   var gistComplete = function(data) {
     gist.id('gist').innerHTML = '';
     var string = 'may refer to:';
+    var redirect = 'is a redirect from a title';
     for (var i = 0; i < 20; i++) {
-      if (data[1][i] && data[2][i] && data[2][i].indexOf(string) == -1) {
+      if (data[1][i] && data[2][i] && data[2][i].indexOf(string) == -1 && data[2][i].indexOf(redirect) == -1) {
         gist.id('gist').innerHTML += '<div class="a-gist">' +
           '<p class="gist-title">' + data[1][i] + '</p>' +
           '<p class="gist-body">' + data[2][i] + '</p>' +
