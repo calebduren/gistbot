@@ -96,8 +96,8 @@ if ($('.input').length) {
     if (summaries <= 0) {
       gist.id('gist').innerHTML = '';
       gist.id('gist').innerHTML += '<div class="a-gist">' +
-        '<p class="gist-title">😬 Oh, no!</p>' +
-        '<p class="gist-body">We can&rsquo;t seem to create a gist from the ' + hostname + ' link that you provided</p>' +
+        '<p class="gist-title">Oh, no! 😬</p>' +
+        '<p class="gist-body">We can&rsquo;t seem to create a gist from the ' + hostname + ' link that you provided.</p>' +
         '<p class="gist-body">Double check the URL and make sure it starts with http, https, or www.</p>' +
         '</div>';
     }
@@ -105,27 +105,32 @@ if ($('.input').length) {
 
   var gistComplete = function(data) {
     gist.id('gist').innerHTML = '';
-    var string = 'may refer to:';
-    var approximate = 'may approximate';
+    var string = 'may refer to';
+    var approx = 'may approximate';
     var redirect = 'is a redirect from';
-    var
+
     for (var i = 0; i < 20; i++) {
-      if (data[1][i] && data[2][i] && data[2][i].indexOf(string) == -1 && data[2][i].indexOf(redirect) == -1 && data[2][i].indexOf(approximate) == -1) {
-        gist.id('gist').innerHTML += '<div class="a-gist">' +
+      if (data[1][i] && data[2][i]) {
+        if (data[2][i].indexOf(string) == -1 && data[2][i].indexOf(redirect) == -1 && data[2][i].indexOf(approx) == -1) {
+          gist.id('gist').innerHTML += '<div class="a-gist">' +
           '<p class="gist-title">' + data[1][i] + '</p>' +
           '<p class="gist-body">' + data[2][i] + '</p>' +
           '<p class="right">' +
           '<a class="gist-link" href="https://en.wikipedia.org/wiki/' + data[1][i] + '"' + 'target="_blank">Read more at wikipedia.org</a>' +
           '</p>' +
           '</div>';
+        }
+      }
+
+      if ( !data[1][0] ) {
+        if ($('#get').val()) {
+          gist.id('gist').innerHTML = '';
+          gist.id('gist').innerHTML += '<div class="a-gist">' +
+            '<p class="gist-title">Oh, no! 😬</p>' +
+            '<p class="gist-body">We can&rsquo;t seem to create a gist for that.</p>' +
+            '</div>';
+        }
       }
     }
-
-    if ( !data[1].length ) {
-      gist.id('gist').innerHTML = '';
-      gist.id('gist').innerHTML += '<div class="a-gist">' +
-        '<p class="gist-title">😬 Oh, no!</p>' +
-        '<p class="gist-body">We can&rsquo;t seem to create a gist for that.</p>' +
-        '</div>';    }
-  };
+  }
 }
