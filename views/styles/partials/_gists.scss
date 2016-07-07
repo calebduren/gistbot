@@ -9,9 +9,9 @@
     text-align: center;
 
     > div {
-      width: 16px;
-      height: 16px;
-      margin: 4px;
+      width: 10px;
+      height: 10px;
+      margin: 8px;
       background-color: $gistbot;
       border-radius: 100%;
       display: inline-block;
@@ -19,11 +19,11 @@
     }
 
     .load-one {
-      animation-delay: -200ms;
+      animation-delay: -400ms;
     }
 
     .load-two {
-      animation-delay: -100ms;
+      animation-delay: -200ms;
     }
   }
 }
